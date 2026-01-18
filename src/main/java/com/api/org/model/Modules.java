@@ -2,6 +2,8 @@ package com.api.org.model;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -26,4 +28,14 @@ public class Modules extends DateAudit {
 	private Integer componentCount;
 	
 	private Long createdBy;
+	
+	public Modules() {}
+	
+	public Modules(String name,Integer componentCount,Long createdBy) {
+      this.name=name;
+      this.componentCount=componentCount;
+      this.createdBy=createdBy;
+      this.createdOn=new Date();
+		
+	}
 }

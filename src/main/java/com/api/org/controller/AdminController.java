@@ -14,6 +14,7 @@ import com.api.org.exception.BadRequestException;
 import com.api.org.exception.NotAuthorisedException;
 import com.api.org.security.CurrentUser;
 import com.api.org.security.UserPrincipal;
+import com.api.org.service.ComponentsMasterService;
 import com.api.org.service.ComponentsService;
 import com.api.org.service.ModulesService;
 import com.api.org.service.ProjectsService;
@@ -39,13 +40,16 @@ public class AdminController {
 	private ComponentsService componentsService;
 	
 	@Autowired
+	private ComponentsMasterService componentMasterService;
+	
+	@Autowired
 	private ModulesService modulesService;
 	
 	
 	
 	
 	@PostMapping(AppConstants.CONTROLLER_MANAGE_PROJECT)	
-	@Operation(summary = "Create/Update or delete project record", description = "It will perform action(1=add,2=update,3=delete) as per action parameter value}")
+	@Operation(summary = "Add/Update/Delete project record", description = "It will perform action(1=add,2=update,3=delete) as per action parameter value}")
 	@ApiResponses(value = {
 	        @ApiResponse(responseCode = "200", description = "{\"message\": \"Success\"}"), 
 	        @ApiResponse(responseCode = "400", description = "{\"message\": \"Required parameter missing\"}")
@@ -85,7 +89,7 @@ public class AdminController {
 	
 	
 	@PostMapping(AppConstants.CONTROLLER_MANAGE_MODULE)	
-	@Operation(summary = "Create/Update or delete module record", description = "It will perform action(1=add,2=update,3=delete) as per action parameter value}")
+	@Operation(summary = "Add/Update/Delete module record", description = "It will perform action(1=add,2=update,3=delete) as per action parameter value}")
 	@ApiResponses(value = {
 	        @ApiResponse(responseCode = "200", description = "{\"message\": \"Success\"}"), 
 	        @ApiResponse(responseCode = "400", description = "{\"message\": \"Required parameter missing\"}")
@@ -127,7 +131,7 @@ public class AdminController {
 	
 	
 	@PostMapping(AppConstants.CONTROLLER_MANAGE_COMPONENT)	
-	@Operation(summary = "Create/Update or delete component record", description = "It will perform action(1=add,2=update,3=delete) as per action parameter value}")
+	@Operation(summary = "Add/Update/Delete component record", description = "It will perform action(1=add,2=update,3=delete) as per action parameter value}")
 	@ApiResponses(value = {
 	        @ApiResponse(responseCode = "200", description = "{\"message\": \"Success\"}"), 
 	        @ApiResponse(responseCode = "400", description = "{\"message\": \"Required parameter missing\"}")
@@ -164,6 +168,52 @@ public class AdminController {
 		if(CommonFunctions.hasRole(user.getRoles())) return componentsService.component(user);
 		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
 	}
+	
+	
+	
+	
+	@PostMapping(AppConstants.CONTROLLER_MANAGE_COMPONENT_MASTER)	
+	@Operation(summary = "Add/Update/Delete componentMaster record", description = "It will perform action(1=add,2=update,3=delete) as per action parameter value}")
+	@ApiResponses(value = {
+	        @ApiResponse(responseCode = "200", description = "{\"message\": \"Success\"}"), 
+	        @ApiResponse(responseCode = "400", description = "{\"message\": \"Required parameter missing\"}")
+	    })
+	public Response manageComponentMaster(@RequestBody Request request,@Parameter(hidden = true) @CurrentUser UserPrincipal user) 
+	{	
+		if(CommonFunctions.hasRole(user.getRoles()))return componentMasterService.manageComponentsMaster(user,request);
+		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
+	}	
+
+	@GetMapping(AppConstants.CONTROLLER_COMPONENT_MASTER_BY_ID)
+	@Operation(summary = "Get componentMaster by id ", description = "Return a componentMaster detail as per the id")
+	@ApiResponses(value = {
+	        @ApiResponse(responseCode = "200", description = "{\"message\": \"Success\",\"data\":{\"id\": 1,\"createdBy\": 15,\"surveyName\": \"School Survey\",\"content\": \"{\"title\":\"School Survey\",\"completedHtml\":\"<h3>Thank you for your feedback</h3>\"}\",\"token\": \"d092caa8-50e8-4f69-bde3-1e6886918fec1714203413620\", \"createdOn\": \"2024-04-27 13:06:53\"}}"), 
+	        @ApiResponse(responseCode = "400", description = "{\"message\": \"Required parameter missing\"}"),
+	        @ApiResponse(responseCode = "404", description = "{\"message\": \"No record available\"}")
+	    })
+	public Response componentMasterById(@PathVariable Long id,@Parameter(hidden = true) @CurrentUser UserPrincipal user)
+	{
+		if(CommonFunctions.hasRole(user.getRoles()))return componentMasterService.componentsMaster(user,id);
+		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
+	}
+
+	
+	@GetMapping(AppConstants.CONTROLLER_COMPONENT_MASTER)
+	@Operation(summary = "Get componentMaster records order by latest created", description = "Return a list of componentMaster")
+	@ApiResponses(value = {
+	        @ApiResponse(responseCode = "200", description = "{\"message\": \"Success\",\"data\":[{\"id\": 1,\"createdBy\": 15,\"surveyName\": \"School Survey\",\"content\": \"{\"title\":\"School Survey\",\"completedHtml\":\"<h3>Thank you for your feedback</h3>\"}\",\"token\": \"d092caa8-50e8-4f69-bde3-1e6886918fec1714203413620\", \"createdOn\": \"2024-04-27 13:06:53\"}]}"), 
+	        @ApiResponse(responseCode = "400", description = "{\"message\": \"Required parameter missing\"}"),
+	        @ApiResponse(responseCode = "404", description = "{\"message\": \"No record available\"}")
+	    })
+	public Response componentsMasterList(@Parameter(hidden = true) @CurrentUser UserPrincipal user) 
+	{
+		if(CommonFunctions.hasRole(user.getRoles())) return componentMasterService.componentsMaster(user);
+		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
+	}
+	
+	
+	
+	
 	
 	
 }

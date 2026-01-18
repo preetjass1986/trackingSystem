@@ -1,3 +1,4 @@
+
 package com.api.org.model;
 
 import static javax.persistence.GenerationType.IDENTITY;
@@ -18,24 +19,38 @@ import lombok.Data;
 @Data
 @Entity
 //@JsonInclude(Include.NON_NULL)
-@Table(name = "components_master")
-public class ComponentsMaster extends DateAudit {
+@Table(name = "components")
+public class Components extends DateAudit {
 	
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 	private Long id;
 	
+	private Long projectId;
+	
+	private Long moduleId;
+	
+	private Integer componentsCount;
+	
 	private String name;
 	
 	private Integer status;
 	
-	public ComponentsMaster() {}
-	
-	public ComponentsMaster(String name) {
-		this.name=name;
-		this.status=AppConstants.ONE;
-		this.createdOn=new Date();
+	public Components() {
+		
 	}
+	
+	public Components(Long projectId,Long moduleId,Integer componentsCount,String name) {
+		this.projectId=projectId;
+		this.moduleId=moduleId;
+		this.componentsCount=componentsCount;
+		this.name=name;
+		this.createdOn=new Date();
+		this.status=AppConstants.ONE;		
+	}
+	
+
+
 
 }
 

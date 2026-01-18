@@ -11,6 +11,6 @@ public interface ModulesService {
 	
 	Response module(UserPrincipal user);
 	
-	Response manageModule(UserPrincipal user,Request surveyRequest);
+	Response manageModule(UserPrincipal user,Request request);
 
 }

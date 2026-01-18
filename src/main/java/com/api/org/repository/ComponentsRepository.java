@@ -6,12 +6,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.api.org.model.Modules;
+import com.api.org.model.Components;
 
-public interface ModulesRepository extends JpaRepository<Modules, Long> {
-
-	@Query("select m from Modules m order by m.id desc")
-	List<Modules> getData(Pageable pageable);
+public interface ComponentsRepository extends JpaRepository<Components, Long> {
+	
+	@Query("select c from Components c order by c.id desc")
+	List<Components> getData(Pageable pageable);
 	
 	boolean existsByName(String name);
 

@@ -8,7 +8,10 @@ import lombok.Data;
 @Data
 public class Request {
 	 Long id;
-	 Integer action;	 
+	 Integer action;
+	 Long projectId;		
+	 Long moduleId;
+	 Integer componentsCount;
 	 
 	 @NotBlank
 	 String content;

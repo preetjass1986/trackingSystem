@@ -10,6 +10,6 @@ public interface ComponentsService {
 	
 	Response component(UserPrincipal user);
 		
-	Response manageComponent(UserPrincipal user,Request surveyRequest);
+	Response manageComponent(UserPrincipal user,Request request);
 
 }

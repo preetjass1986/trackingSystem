@@ -10,7 +10,7 @@ public interface ProjectsService {
 	
 	Response project(UserPrincipal user);
 	
-	Response manageProject(UserPrincipal user,Request surveyRequest);
+	Response manageProject(UserPrincipal user,Request request);
 	
 
 	

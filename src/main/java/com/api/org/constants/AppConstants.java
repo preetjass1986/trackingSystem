@@ -200,20 +200,19 @@ public interface AppConstants {
 	public static final String CONTROLLER_MAIN_ADMIN="/api/admin";
 	public static final String CONTROLLER_REGISTER_USER="/register";
 	public static final String CONTROLLER_LOGIN="/login";
-	public static final String CONTROLLER_SURVEY_BY_TOKEN="/surveyByToken/{token}";
-	public static final String CONTROLLER_SURVEY_BY_ID="/surveyById/{id}";
 	
 	public static final String CONTROLLER_MANAGE_PROJECT="/manageProject";	
 	public static final String CONTROLLER_PROJECT="/project";
-	public static final String CONTROLLER_PROJECT_BY_ID="/project/{id}";
-	
+	public static final String CONTROLLER_PROJECT_BY_ID="/project/{id}";	
 	public static final String CONTROLLER_MANAGE_MODULE="/manageModule";	
 	public static final String CONTROLLER_MODULE="/module";
-	public static final String CONTROLLER_MODULE_BY_ID="/module/{id}";
-	
+	public static final String CONTROLLER_MODULE_BY_ID="/module/{id}";	
 	public static final String CONTROLLER_MANAGE_COMPONENT="/manageComponent";	
 	public static final String CONTROLLER_COMPONENT="/component";
 	public static final String CONTROLLER_COMPONENT_BY_ID="/component/{id}";
+	public static final String CONTROLLER_MANAGE_COMPONENT_MASTER="/manageComponentMaster";	
+	public static final String CONTROLLER_COMPONENT_MASTER="/componentMaster";
+	public static final String CONTROLLER_COMPONENT_MASTER_BY_ID="/componentMaster/{id}";
 
 
     public static final String MODE_USSD="USSD";
