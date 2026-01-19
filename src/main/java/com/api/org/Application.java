@@ -10,6 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+import com.api.org.constants.AppConstants;
+
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -25,7 +27,7 @@ public class Application extends SpringBootServletInitializer {
 	
 	@PostConstruct
 	public void started() {
-	    TimeZone.setDefault(TimeZone.getTimeZone("IST"));
+		TimeZone.setDefault(TimeZone.getTimeZone(AppConstants.TIMEZONE));
 	}
 	
 	@Override
