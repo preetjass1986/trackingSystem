@@ -17,42 +17,30 @@ import org.springframework.data.annotation.CreatedDate;
 import com.api.org.model.audit.DateAudit;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
-@Entity
-@Table(name="users_session",
-    indexes = {
-        @Index(name = "idx_users_session_userid", columnList = "userid")
-    })
-@Getter
-@Setter
+
+@Data
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Entity
+@Table(name="users_session")
 public class UsersSession extends DateAudit{
 	
-	@EqualsAndHashCode.Include
+	 @EqualsAndHashCode.Include
 	 @Id
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)	
 	 private Long id; 
-	 
-	 @CreatedDate
-	 @Temporal(TemporalType.TIMESTAMP)
-	 @Column(name = "created_on", updatable = false)
-	 @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "IST")
-	 private Date createdOn;
-
-	 
-	 @Column(name = "userid", nullable = false)
+	 	 
 	 private Long userid;
-
-	 @Column(name = "token", length = 500, nullable = false)
+	 
 	 private String token;
 
-	 @Column(name = "header", length = 50)
 	 private String header;
 
 

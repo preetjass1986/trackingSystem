@@ -40,7 +40,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         try {
         	
             String jwt = getJwtFromRequest(request);
-            logger.info("jwt="+jwt);
             if (StringUtils.hasText(jwt) && tokenProvider.validateToken(jwt)) {
                 Long userId = tokenProvider.getUserIdFromJWT(jwt);
 
@@ -49,18 +48,14 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     and create the UserDetails object by parsing those claims from the JWT.
                     That would avoid the following database hit. It's completely up to you.
                  */
-               // User user=customUserDetailsService.getUserById(userId);
-                Users user = customUserDetailsService.loadUserByUserId(userId);
-                //if(user!=null && user.getAuthToken()!=null && user.getAuthToken().equalsIgnoreCase(jwt)) // if same token present in users table then allow
-                if(user!=null) 
+                Users user=customUserDetailsService.loadUserByUserId(userId);
+                if(user!=null && user.getToken()!=null && user.getToken().equalsIgnoreCase(jwt)) // if same token present in users table then allow
                 {
-                	if(usersSessionRepository.existsByUseridAndToken(userId, jwt))// if same token present in users table then allow
-                	{
-	                	UserDetails userDetails=UserPrincipal.create(user);
-		                UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-		                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));	
-		                SecurityContextHolder.getContext().setAuthentication(authentication);
-                	}
+            	    UserDetails userDetails=UserPrincipal.create(user);
+	                UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+	                authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));	
+	                SecurityContextHolder.getContext().setAuthentication(authentication);
+                	
                 }
             }
         } catch (Exception ex) {

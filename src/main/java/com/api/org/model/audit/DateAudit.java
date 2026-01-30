@@ -22,20 +22,16 @@ import java.util.Date;
 
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
-@Getter
-@Setter
+@Data
 public abstract class DateAudit {
 
     @JsonFormat(pattern = AppConstants.DATE_FORMAT, timezone = AppConstants.TIMEZONE)
-    @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created_on", updatable = false)
     protected Date createdOn;
 
     @JsonFormat(pattern = AppConstants.DATE_FORMAT, timezone = AppConstants.TIMEZONE)
     @LastModifiedDate
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "updated_on")
     protected Date updatedOn;
 }
 

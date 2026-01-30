@@ -10,10 +10,12 @@ import javax.persistence.Table;
 import com.api.org.model.audit.DateAudit;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 //@JsonInclude(Include.NON_NULL)
+@NoArgsConstructor
 @Table(name = "stats_master")
 public class StatusMaster extends DateAudit {
 	
