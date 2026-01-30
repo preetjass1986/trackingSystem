@@ -26,15 +26,12 @@ public interface UserRepository extends JpaRepository<Users, Long> {
 	
 	Optional<Users> findByAni(String ani);
 	
-	List<Users> findByAniAndServiceId(String ani,Integer serviceId);
-
+	Optional<Users> findByUserName(String userName);
+	
+	
 	List<Users> findByAni(String ani, Pageable page);
 
-	List<Users> findByCircle(String circle, Pageable page);
-
-	List<Users> findByGender(String gender, Pageable page);
 	
-
 
 
 	

@@ -17,15 +17,13 @@ import com.api.org.service.ProjectsService;
 import com.api.org.view.Response;
 import com.api.org.view.Request;
 
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.security.SecurityRequirements;
-import springfox.documentation.annotations.ApiIgnore;
+
 
 
 @CrossOrigin(origins = "*")

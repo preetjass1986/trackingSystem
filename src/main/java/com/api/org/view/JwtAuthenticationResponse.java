@@ -51,7 +51,7 @@ public class JwtAuthenticationResponse {
 		this.accessToken = accessToken;
 		this.name = principal.getName();
 		this.username = principal.getUsername();
-		this.role=principal.getRoles();
+		this.role=principal.getRole();
 		this.ani=principal.getAni();
 		this.id=principal.getId();
 		this.status=principal.getStatus();

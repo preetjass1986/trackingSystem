@@ -6,6 +6,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.context.annotation.Profile;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,18 +27,16 @@ import com.api.org.view.LoginRequest;
 import com.api.org.view.RegisterRequest;
 import com.api.org.view.Response;
 
-import io.swagger.annotations.ApiOperation;
-import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.security.SecurityRequirements;
-import springfox.documentation.annotations.ApiIgnore;
 
 
 @CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "${app.cors.allowed-origins:*}")
+
 @RestController
 @RequestMapping(AppConstants.CONTROLLER_MAIN_API)
 public class OpenController {
@@ -54,7 +53,8 @@ public class OpenController {
 	        @ApiResponse(responseCode = "208", description = "{\"message\": \"Record already exist.\"}"),
 	        @ApiResponse(responseCode = "400", description = "{\"message\": \"Required parameter missing.\"}")
 	    })
-	public Response createUser(@RequestBody RegisterRequest signUpRequest,@Parameter(hidden = true) @CurrentUser UserPrincipal userPrincipal) {
+	public Response createUser(@Valid @RequestBody RegisterRequest signUpRequest,
+			@Parameter(hidden = true) @CurrentUser UserPrincipal userPrincipal) {
 		return userService.registerUser(signUpRequest,userPrincipal);
 	}
 	
@@ -67,6 +67,9 @@ public class OpenController {
 	    })
 	public Response login(@Valid @RequestBody LoginRequest loginRequest) 
 	{				
+//		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+//		System.out.println(encoder.encode("admin123"));
+
 		return userService.login(loginRequest);
 	}
 	

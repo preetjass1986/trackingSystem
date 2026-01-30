@@ -7,8 +7,8 @@ import lombok.Data;
 public class RegisterRequest {
 
 	@NotBlank
-	@Size(max = 10)
-	private String username;
+	@Size(max = 20)
+	private String userName;
 	
 	@NotBlank
 	@Size(max = 50)
@@ -17,6 +17,12 @@ public class RegisterRequest {
 	@NotBlank
 	@Size(max = 50)
 	private String name;
+
+	@Size(max = 10)
+	private String mobile;
+	
+	@Size(max = 50)
+	private String sapId;
 
 	@Size(max = 40)
 	@Email

@@ -55,9 +55,6 @@ public class UsersLog   extends DateAudit{
 		this.userName=user.getUserName();
 		this.password=user.getPassword();
 		this.status=user.getStatus();
-		this.age=user.getAge();
-		this.circle=user.getCircle();
-		this.serviceId=user.getServiceId();
 		this.role=user.getRole();
 		this.createdOn=user.getCreatedOn();
 		this.updatedOn=new Date();	

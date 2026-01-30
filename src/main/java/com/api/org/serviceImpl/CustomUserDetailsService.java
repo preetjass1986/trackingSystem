@@ -25,26 +25,14 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     @Override
     @Transactional
-    public UserDetails loadUserByUsername(String msisdnOrEmail)
+    public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
-    	Boolean isLong=true;
-    	 /*Boolean isLong=false;
-   		Long ani;
-       	
-    	try {
-    		ani=Long.valueOf(msisdnOrEmail);
-    		isLong=true;
-		} catch (Exception e) {
-			isLong=false;		}*/
-    	if(isLong) {    		
-    		//Users user = userRepository.findByAni(Long.valueOf(msisdnOrEmail))
-    		Users user = userRepository.findByAni(msisdnOrEmail).orElseThrow(() ->	new UsernameNotFoundException(AppConstants.RESOURCE_NOT_FOUND));
-    		return UserPrincipal.create(user);    	
-    	}
-    	else {	throw new UsernameNotFoundException(AppConstants.RESOURCE_NOT_FOUND);}
-    	
+    	 Users user = userRepository.findByUserName(username)
+    	            .orElseThrow(() ->
+    	                    new UsernameNotFoundException(AppConstants.RESOURCE_NOT_FOUND));
 
-    }
+    	    return UserPrincipal.create(user);
+       }
 
     @Transactional
     public UserDetails loadUserById(Long id) {

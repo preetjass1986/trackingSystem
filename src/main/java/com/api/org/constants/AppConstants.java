@@ -184,12 +184,12 @@ public interface AppConstants {
 	public static final int 	NINE  		= 9;
 	
 	
-	public static final int 	SUPPER_ADMIN_ROLE  	= 0;
-	public static final int 	ADMIN_ROLE  	= 1;
-	public static final int 	USER_ROLE  		= 2;
-	public static final int 	VENDER_ROLE  	= 3;
-	public static final int 	TEST_USER_ROLE  = 4;
-	public static final int 	AGENT_ROLE  	= 5;
+	public static final int 	SUPPER_ADMIN_ROLE  	= 1;
+	public static final int 	ADMIN_ROLE  	= 2;
+	public static final int 	USER_ROLE  		= 3;
+	public static final int 	VENDER_ROLE  	= 4;
+	public static final int 	TEST_USER_ROLE  = 5;
+	public static final int 	AGENT_ROLE  	= 6;
 	
 
 	

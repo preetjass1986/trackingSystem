@@ -3,97 +3,90 @@ package com.api.org.security;
 import com.api.org.model.Users;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import lombok.Data;
-import springfox.documentation.annotations.ApiIgnore;
-
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import java.io.Serializable;
 import java.util.Collection;
-import java.util.List;
+import java.util.Collections;
 import java.util.Objects;
 
-@Data
-public class UserPrincipal implements UserDetails {
-  
+public class UserPrincipal implements UserDetails, Serializable {
 
-	private Long id;
-	
-	private String name;
-	
+    private static final long serialVersionUID = 1L;
+
+    private Long id;
     private String username;
-    
-    @JsonIgnore
-    private String password; 
-
+    private String name;
     private String email;
-    private String ani;	
-    
-	@JsonIgnore
-    private Integer roles; 
-	
-	@JsonIgnore
-    private Integer status;
-    
+    private String ani;
 
-	@JsonIgnore
+    @JsonIgnore
+    private String password;
+
+    @JsonIgnore
+    private Integer role;
+
+    @JsonIgnore
+    private Integer status;
+
     private Collection<? extends GrantedAuthority> authorities;
-	
-    public UserPrincipal()
-    {
-    	
+
+    public UserPrincipal() {
     }
 
-    public UserPrincipal(Long id,String username, String email, String password,Integer roles, Collection<? extends GrantedAuthority> authorities,
-    		String name,String ani,Integer status) {
+    private UserPrincipal(
+            Long id,
+            String username,
+            String password,
+            Integer role,
+            Collection<? extends GrantedAuthority> authorities,
+            String name,
+            String email,
+            String ani,
+            Integer status) {
+
         this.id = id;
-       
         this.username = username;
-        this.email = email;
         this.password = password;
+        this.role = role;
         this.authorities = authorities;
-        this.roles=roles;
-        this.name=name;
-        this.ani=ani;
-        this.status=status;
+        this.name = name;
+        this.email = email;
+        this.ani = ani;
+        this.status = status;
     }
 
     public static UserPrincipal create(Users user) {
-        List<GrantedAuthority> authorities = null;
-        	        return new UserPrincipal(
-	                user.getId(),
-	                user.getUserName(),
-	                user.getEmail(),
-	                user.getPassword(),
-	                user.getRole(),
-	                authorities,
-	                user.getName(),
-	                user.getAni(),
-	                user.getStatus()
-	        );
-      
+
+        // Map integer role → Spring Security authority
+        GrantedAuthority authority =
+                new SimpleGrantedAuthority("ROLE_" + user.getRole());
+
+        return new UserPrincipal(
+                user.getId(),
+                user.getUserName(),
+                user.getPassword(),
+                user.getRole(),
+                Collections.singletonList(authority),
+                user.getName(),
+                user.getEmail(),
+                user.getAni(),
+                user.getStatus()
+        );
     }
 
-    public Integer getRoles() {
-		return roles;
-	}
-
-	public void setRoles(Integer roles) {
-		this.roles = roles;
-	}
-
-	public Long getId() {
+ 
+    public Long getId() {
         return id;
     }
 
-   
-    
- 
+    public Integer getRole() {
+        return role;
+    }
 
-    
-
-	@Override
+    @Override
     public String getUsername() {
         return username;
     }
@@ -102,11 +95,24 @@ public class UserPrincipal implements UserDetails {
     public String getPassword() {
         return password;
     }
+    
+
+    public String getName() {
+        return name;
+    }
+    public String getAni() {
+        return ani;
+    }
+    public Integer getStatus() {
+        return status;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return authorities; // NEVER null
     }
+
+  
 
     @Override
     public boolean isAccountNonExpired() {
@@ -125,8 +131,10 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return status == null || status == 1;
     }
+
+ 
 
     @Override
     public boolean equals(Object o) {
@@ -138,34 +146,6 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(id);
     }
-
-	@Override
-	public String toString() {
-		return "UserPrincipal [id=" + id + ", username=" + username + ", email=" + email + ", password=" + password
-				+ ", ani=" + ani + ", name=" + name + ", roles=" + roles
-				+ ", authorities=" + authorities + "]";
-	}
-	
-	public UserPrincipal(Users user) 
-	{		
-		this.email=user.getEmail();
-		this.ani=user.getAni();
-		this.username=user.getUserName();
-		this.name=user.getName();
-		this.roles=user.getRole();
-		this.id=user.getId();
-		this.status=user.getStatus();
-	}
-
-
-
-	
-	
-	
-
-	
-    
 }

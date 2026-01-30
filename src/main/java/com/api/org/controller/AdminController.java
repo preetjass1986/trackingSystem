@@ -56,7 +56,10 @@ public class AdminController {
 	    })
 	public Response manageProject(@RequestBody Request request,@Parameter(hidden = true) @CurrentUser UserPrincipal user) 
 	{	
-		if(CommonFunctions.hasRole(user.getRoles()))return projectsService.manageProject(user,request);
+		if(CommonFunctions.hasRole(user.getRole()))
+		{
+			return projectsService.manageProject(user,request);
+		}
 		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
 	}
 
@@ -69,7 +72,7 @@ public class AdminController {
 	    })
 	public Response projectById(@PathVariable Long id,@Parameter(hidden = true) @CurrentUser UserPrincipal user)
 	{
-		if(CommonFunctions.hasRole(user.getRoles()))return projectsService.project(user,id);
+		if(CommonFunctions.hasRole(user.getRole()))return projectsService.project(user,id);
 		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
 	}
 
@@ -83,7 +86,7 @@ public class AdminController {
 	    })
 	public Response projectList(@Parameter(hidden = true) @CurrentUser UserPrincipal user) 
 	{
-		if(CommonFunctions.hasRole(user.getRoles()))return projectsService.project(user);
+		if(CommonFunctions.hasRole(user.getRole()))return projectsService.project(user);
 		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
 	}
 	
@@ -96,7 +99,7 @@ public class AdminController {
 	    })
 	public Response manageModule(@RequestBody Request request,@Parameter(hidden = true) @CurrentUser UserPrincipal user) 
 	{	
-		if(CommonFunctions.hasRole(user.getRoles()))return modulesService.manageModule(user,request);
+		if(CommonFunctions.hasRole(user.getRole()))return modulesService.manageModule(user,request);
 		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
 	}	
 
@@ -109,7 +112,7 @@ public class AdminController {
 	    })
 	public Response moduleById(@PathVariable Long id,@Parameter(hidden = true) @CurrentUser UserPrincipal user)
 	{
-		if(CommonFunctions.hasRole(user.getRoles()))return modulesService.module(user,id);
+		if(CommonFunctions.hasRole(user.getRole()))return modulesService.module(user,id);
 		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
 	}
 
@@ -123,7 +126,7 @@ public class AdminController {
 	    })
 	public Response modulesList(@Parameter(hidden = true) @CurrentUser UserPrincipal user) 
 	{
-		if(CommonFunctions.hasRole(user.getRoles())) return modulesService.module(user);
+		if(CommonFunctions.hasRole(user.getRole())) return modulesService.module(user);
 		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
 	}
 	
@@ -138,7 +141,7 @@ public class AdminController {
 	    })
 	public Response manageComponent(@RequestBody Request request,@Parameter(hidden = true) @CurrentUser UserPrincipal user) 
 	{	
-		if(CommonFunctions.hasRole(user.getRoles()))return componentsService.manageComponent(user,request);
+		if(CommonFunctions.hasRole(user.getRole()))return componentsService.manageComponent(user,request);
 		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
 	}	
 
@@ -151,7 +154,7 @@ public class AdminController {
 	    })
 	public Response componentById(@PathVariable Long id,@Parameter(hidden = true) @CurrentUser UserPrincipal user)
 	{
-		if(CommonFunctions.hasRole(user.getRoles()))return componentsService.component(user,id);
+		if(CommonFunctions.hasRole(user.getRole()))return componentsService.component(user,id);
 		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
 	}
 
@@ -165,7 +168,7 @@ public class AdminController {
 	    })
 	public Response componentsList(@Parameter(hidden = true) @CurrentUser UserPrincipal user) 
 	{
-		if(CommonFunctions.hasRole(user.getRoles())) return componentsService.component(user);
+		if(CommonFunctions.hasRole(user.getRole())) return componentsService.component(user);
 		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
 	}
 	
@@ -180,7 +183,7 @@ public class AdminController {
 	    })
 	public Response manageComponentMaster(@RequestBody Request request,@Parameter(hidden = true) @CurrentUser UserPrincipal user) 
 	{	
-		if(CommonFunctions.hasRole(user.getRoles()))return componentMasterService.manageComponentsMaster(user,request);
+		if(CommonFunctions.hasRole(user.getRole()))return componentMasterService.manageComponentsMaster(user,request);
 		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
 	}	
 
@@ -193,7 +196,7 @@ public class AdminController {
 	    })
 	public Response componentMasterById(@PathVariable Long id,@Parameter(hidden = true) @CurrentUser UserPrincipal user)
 	{
-		if(CommonFunctions.hasRole(user.getRoles()))return componentMasterService.componentsMaster(user,id);
+		if(CommonFunctions.hasRole(user.getRole()))return componentMasterService.componentsMaster(user,id);
 		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
 	}
 
@@ -207,7 +210,7 @@ public class AdminController {
 	    })
 	public Response componentsMasterList(@Parameter(hidden = true) @CurrentUser UserPrincipal user) 
 	{
-		if(CommonFunctions.hasRole(user.getRoles())) return componentMasterService.componentsMaster(user);
+		if(CommonFunctions.hasRole(user.getRole())) return componentMasterService.componentsMaster(user);
 		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
 	}
 	

@@ -40,7 +40,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         try {
         	
             String jwt = getJwtFromRequest(request);
-           // logger.info("jwt="+jwt);
+            logger.info("jwt="+jwt);
             if (StringUtils.hasText(jwt) && tokenProvider.validateToken(jwt)) {
                 Long userId = tokenProvider.getUserIdFromJWT(jwt);
 
@@ -71,21 +71,21 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     }
 
     private String getJwtFromRequest(HttpServletRequest request) {
-        String bearerToken = request.getHeader("Authorization");        
-        if(bearerToken==null) 
-        {  
-        	// only for websocket connection from angular or any other javascript 
-        	//if(request.getHeader("Sec-WebSocket-Protocol")!=null)bearerToken = request.getHeader("Sec-WebSocket-Protocol").replace("soap, ","");        	
-        	if(bearerToken==null)
-        	{
-        	   try {bearerToken=request.getParameter("wst").replace("%22","");}catch(Exception ex) {}   
-        	}
-        	return bearerToken;
-        }
-       
+
+        String bearerToken = request.getHeader("Authorization");
+
+        logger.info("bearerToken="+bearerToken);
         if (StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
-            return bearerToken.substring(7, bearerToken.length());
+            return bearerToken.substring(7).trim();
         }
+
+       
+        String wsToken = request.getParameter("wst");
+        if (StringUtils.hasText(wsToken)) {
+            return wsToken.replace("\"", "").trim();
+        }
+
         return null;
     }
+
 }

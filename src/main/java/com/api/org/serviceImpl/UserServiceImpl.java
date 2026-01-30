@@ -2,6 +2,9 @@ package com.api.org.serviceImpl;
 
 import java.util.Date;
 import java.util.Optional;
+
+import javax.transaction.Transactional;
+
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -34,8 +37,11 @@ import com.api.org.view.RegisterRequest;
 import com.api.org.view.Response;
 import com.api.org.view.UserInfo;
 
+import lombok.RequiredArgsConstructor;
+
 
 @Service("UserService")
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
 	Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
@@ -60,38 +66,58 @@ public class UserServiceImpl implements UserService {
 	
 	
 	@Override
+	@Transactional
 	public Response registerUser(RegisterRequest signUpRequest,UserPrincipal userPrincipal) {
-		if(userPrincipal.getRoles()==AppConstants.SUPPER_ADMIN_ROLE)
-		{
-			if(signUpRequest.getUsername()!=null && signUpRequest.getPassword()!=null && signUpRequest.getName()!=null) {
-				Optional<Users> users=userRepository.findByAni(signUpRequest.getUsername());
-				if(users.isPresent())throw new AlreadyExistsException(AppConstants.RECORD_ALREDAY_EXISTS_STR);
-				else
-				{
+		
+		if (userPrincipal == null || !Integer.valueOf(AppConstants.SUPPER_ADMIN_ROLE)
+		        .equals(userPrincipal.getRole())) {
+		    throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);
+		}
+		if (signUpRequest.getUserName() == null || signUpRequest.getUserName().trim().isEmpty()
+			     || signUpRequest.getPassword() == null || signUpRequest.getPassword().trim().isEmpty()
+			     || signUpRequest.getName() == null || signUpRequest.getName().trim().isEmpty()) {
+			        throw new BadRequestException(AppConstants.REQUIRED_PARAMETER_MISSING);
+			    }
+		if (userRepository.findByUserName(signUpRequest.getUserName()).isPresent()) {
+	        throw new AlreadyExistsException(AppConstants.RECORD_ALREDAY_EXISTS_STR);
+	    }
 					Users user=new Users();
-					user.setAni(signUpRequest.getUsername());
-					user.setCreatedOn(new Date());
-					user.setUserName(signUpRequest.getName());
+					user.setUserName(signUpRequest.getUserName());
+					user.setName(signUpRequest.getName());
 					user.setRole(AppConstants.ONE);
+					user.setEmail(signUpRequest.getEmail());
+					user.setSapId(signUpRequest.getSapId());
+					user.setAni(signUpRequest.getMobile());
 					user.setPassword(passwordEncoder.encode(signUpRequest.getPassword()));
 					userRepository.save(user);
-					LoginRequest loginRequest = new LoginRequest(signUpRequest.getUsername(), signUpRequest.getPassword());
-					JwtAuthenticationResponse jwtAuthenticationResponse = authenticateUser(loginRequest);
-					return new Response().setResponseCode(AppConstants.SUCCESS).setMessage(AppConstants.SUCCESS_STR).setData(jwtAuthenticationResponse);	
-				}
+					
+					LoginRequest loginRequest = 
+							new LoginRequest(signUpRequest.getUserName(), signUpRequest.getPassword());
+					
+					JwtAuthenticationResponse jwtAuthenticationResponse = 
+							authenticateUser(loginRequest);
+					return new Response()
+							.setResponseCode(AppConstants.SUCCESS)
+							.setMessage(AppConstants.SUCCESS_STR)
+							.setData(jwtAuthenticationResponse);	
 			
-			}else {throw new BadRequestException(AppConstants.REQUIRED_PARAMETER_MISSING);}
-		}else { throw new BadRequestException(AppConstants.NOT_AUTHORISED_STRING);}
+		
 	}
 	
 	@Override
 	public Response login(LoginRequest loginRequest) 
 	{				
-		if(loginRequest.getUsername()!=null && loginRequest.getUsername().length()>2) {
-			JwtAuthenticationResponse jwtAuthenticationResponse = authenticateUser(loginRequest);
-			return new Response().setResponseCode(AppConstants.SUCCESS).setMessage(AppConstants.SUCCESS_STR).setData(jwtAuthenticationResponse);
+		if (loginRequest.getUsername() == null || loginRequest.getPassword() == null || loginRequest.getUsername().trim().length()<3
+				|| loginRequest.getPassword().trim().isEmpty()) {
+		    throw new BadRequestException(AppConstants.REQUIRED_PARAMETER_MISSING);
 		}
-		else { throw new BadRequestException(AppConstants.REQUIRED_PARAMETER_MISSING);}
+			JwtAuthenticationResponse jwtAuthenticationResponse =
+					authenticateUser(loginRequest);
+			return new Response()
+					.setResponseCode(AppConstants.SUCCESS)
+					.setMessage(AppConstants.SUCCESS_STR)
+					.setData(jwtAuthenticationResponse);
+		
 
 	}
 	
@@ -115,34 +141,45 @@ public class UserServiceImpl implements UserService {
 	
 
 	public JwtAuthenticationResponse authenticateUser(LoginRequest loginRequest) {
-		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
-		logger.info("["+loginRequest.getUsername()+"] Name:" + authentication.getName() + "|Auth:" + authentication.getAuthorities());
+		Authentication authentication =
+				authenticationManager.authenticate(
+						new UsernamePasswordAuthenticationToken(
+						loginRequest.getUsername(), 
+						loginRequest.getPassword()));
+		//logger.info("["+loginRequest.getUsername()+"] Name:" + authentication.getName() + "|Auth:" + authentication.getAuthorities());
 
 		SecurityContextHolder.getContext().setAuthentication(authentication);
+		
 		UserPrincipal principal = new UserPrincipal();
 		principal = (UserPrincipal) authentication.getPrincipal();
-		logger.info("["+loginRequest.getUsername()+"] " + principal.toString());
+		
+		//logger.info("["+loginRequest.getUsername()+"] " + principal.toString());
 		
 		
 		String jwt = jwtTokenProvider.generateToken(authentication);
+		
 		Optional<Users> usersOpt=userRepository.findById(principal.getId());
-		if(usersOpt.isPresent())
-		{
-			Users users=usersOpt.get();
-			users.setUpdatedOn(new Date());
-			userRepository.save(users);			
-		}
-		// ############## Update auth token in users table ############
+		
+		 Integer role = usersOpt
+		            .map(Users::getRole)
+		            .orElseThrow(() -> new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING));
+
+		 usersSessionRepository.deleteByUserid(principal.getId()); // Invalidate Old Session
+		 if (usersOpt.isPresent()) {
+			    userRepository.save(usersOpt.get());
+			}
+
+		// ############## Update  auth token in users table ############
 		if(jwt!=null && jwt.length()>1)
 		{
 			UsersSession usersSession=new UsersSession();
 			usersSession.setUserid(principal.getId());
-			usersSession.setCreatedOn(new Date());
+			//usersSession.setCreatedOn(new Date());
 			usersSession.setToken(jwt);
 			usersSessionRepository.save(usersSession);	
 		}     
 		
-		return new JwtAuthenticationResponse(jwt, principal.getUsername(),usersOpt.get().getRole());
+		return new JwtAuthenticationResponse(jwt, principal.getUsername(),role);
 
 	}
 

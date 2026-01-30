@@ -1,41 +1,910 @@
-2026-01-19 21:35:31.659  INFO 24148 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-2QSF4ID with PID 24148 (E:\git_workspace\trackingSystem\target\classes started by Admin in E:\git_workspace\trackingSystem)
-2026-01-19 21:35:31.675  INFO 24148 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
-2026-01-19 21:35:31.811  INFO 24148 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2026-01-19 21:35:31.812  INFO 24148 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2026-01-19 21:35:33.321  INFO 24148 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
-2026-01-19 21:35:33.511  INFO 24148 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 164ms. Found 11 JPA repository interfaces.
-2026-01-19 21:35:34.034  INFO 24148 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
-2026-01-19 21:35:34.137  INFO 24148 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
-2026-01-19 21:35:34.137  INFO 24148 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
-2026-01-19 21:35:34.138  INFO 24148 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
-2026-01-19 21:35:34.138  INFO 24148 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
-2026-01-19 21:35:34.139  INFO 24148 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
-2026-01-19 21:35:34.139  INFO 24148 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
-2026-01-19 21:35:34.140  INFO 24148 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
-2026-01-19 21:35:34.140  INFO 24148 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
-2026-01-19 21:35:34.140  INFO 24148 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
-2026-01-19 21:35:34.265  INFO 24148 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
-2026-01-19 21:35:34.351  INFO 24148 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1908d35d' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2026-01-19 21:35:34.370  INFO 24148 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2026-01-19 21:35:34.492  INFO 24148 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
-2026-01-19 21:35:34.506  INFO 24148 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
-2026-01-19 21:35:35.670  INFO 24148 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
-2026-01-19 21:35:35.689  INFO 24148 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-01-19 21:35:35.691  INFO 24148 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
-2026-01-19 21:35:35.913  INFO 24148 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
-2026-01-19 21:35:35.913  INFO 24148 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4100 ms
-2026-01-19 21:35:36.169  WARN 24148 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2026-01-19 21:35:36.504  INFO 24148 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2026-01-19 21:35:36.593  INFO 24148 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-01-19 21:35:36.736  INFO 24148 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.15.Final
-2026-01-19 21:35:37.076  INFO 24148 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2026-01-19 21:35:37.287  INFO 24148 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-01-19 21:35:39.853  INFO 24148 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-01-19 21:35:39.915  INFO 24148 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2026-01-19 21:35:41.186  INFO 24148 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-01-19 21:35:43.197  INFO 24148 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51979852, org.springframework.security.web.context.SecurityContextPersistenceFilter@35e107d4, org.springframework.security.web.header.HeaderWriterFilter@2e621c03, org.springframework.web.filter.CorsFilter@5cc49ba7, org.springframework.security.web.authentication.logout.LogoutFilter@2cf7d64a, com.api.org.security.JwtAuthenticationFilter@51b7b817, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6bc77983, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@758de40a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@661eb976, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a0b97ff, org.springframework.security.web.session.SessionManagementFilter@11bf3db3, org.springframework.security.web.access.ExceptionTranslationFilter@1c75ab0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1c872dc5]
-2026-01-19 21:35:43.993  INFO 24148 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2026-01-19 21:35:44.068  INFO 24148 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
-2026-01-19 21:35:44.073  INFO 24148 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
-2026-01-19 21:35:44.695  INFO 24148 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
-2026-01-19 21:35:44.709  INFO 24148 --- [restartedMain] com.api.org.Application                  : Started Application in 13.788 seconds (JVM running for 14.692)
+2026-01-30 05:21:12.986  WARN 7872 --- [HikariPool-11 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-11 - Thread starvation or clock leap detected (housekeeper delta=7h31m15s989ms9µs600ns).
+2026-01-30 05:24:17.692  INFO 7872 --- [http-nio-1010-exec-1] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-30 05:24:17.694  INFO 7872 --- [http-nio-1010-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-30 05:24:17.713  INFO 7872 --- [http-nio-1010-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+2026-01-30 05:24:17.720  INFO 7872 --- [http-nio-1010-exec-1] com.api.org.config.Interceptor           : Request -> Url : /trackingSystem/api/auth/login  Method : POST
+2026-01-30 05:24:18.785 DEBUG 7872 --- [http-nio-1010-exec-1] org.hibernate.SQL                        : 
+    select
+        users0_.id as id1_10_,
+        users0_.created_on as created_2_10_,
+        users0_.updated_on as updated_3_10_,
+        users0_.ani as ani4_10_,
+        users0_.email as email5_10_,
+        users0_.name as name6_10_,
+        users0_.password as password7_10_,
+        users0_.role as role8_10_,
+        users0_.sapId as sapid9_10_,
+        users0_.status as status10_10_,
+        users0_.thumbIsoTemplate as thumbis11_10_,
+        users0_.user_name as user_na12_10_ 
+    from
+        users users0_ 
+    where
+        users0_.user_name=?
+2026-01-30 05:24:18.788 TRACE 7872 --- [http-nio-1010-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [hardeep]
+2026-01-30 05:24:19.120 DEBUG 7872 --- [http-nio-1010-exec-1] org.hibernate.SQL                        : 
+    select
+        roles0_.id as id1_5_0_,
+        roles0_.menu_json as menu_jso2_5_0_,
+        roles0_.role as role3_5_0_,
+        roles0_.role_id as role_id4_5_0_ 
+    from
+        roles roles0_ 
+    where
+        roles0_.role_id=?
+2026-01-30 05:24:19.122 TRACE 7872 --- [http-nio-1010-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [1]
+2026-01-30 05:24:21.639 DEBUG 7872 --- [http-nio-1010-exec-1] org.hibernate.SQL                        : 
+    delete 
+    from
+        users_session 
+    where
+        userid=?
+2026-01-30 05:24:21.640 TRACE 7872 --- [http-nio-1010-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [19]
+2026-01-30 05:24:23.811 DEBUG 7872 --- [http-nio-1010-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        users_session
+        (created_on, header, token, userid) 
+    values
+        (?, ?, ?, ?)
+2026-01-30 05:24:23.815 TRACE 7872 --- [http-nio-1010-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [null]
+2026-01-30 05:24:23.817 TRACE 7872 --- [http-nio-1010-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [null]
+2026-01-30 05:24:23.820 TRACE 7872 --- [http-nio-1010-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImlhdCI6MTc2OTczOTg2MCwiZXhwIjoxNzcwMzQ0NjYwfQ.eiyg87VvXn1crZqdKCgRwuUW2Dl9gnbY6AgCj9xkif7aLbIjul_8pBE-EQg8GuS2-_q0zeoTPzyYXHrHaAxf-w]
+2026-01-30 05:24:23.821 TRACE 7872 --- [http-nio-1010-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [BIGINT] - [19]
+2026-01-30 05:24:24.755  INFO 7872 --- [http-nio-1010-exec-1] com.api.org.config.Interceptor           : Response -> status : 200
+2026-01-30 05:24:59.671 ERROR 7872 --- [http-nio-1010-exec-2] com.api.org.security.JwtTokenProvider    : Invalid JWT token
+2026-01-30 05:24:59.674  INFO 7872 --- [http-nio-1010-exec-2] com.api.org.config.Interceptor           : Request -> Url : /trackingSystem/api/auth/register  Method : POST
+2026-01-30 05:25:00.903 ERROR 7872 --- [http-nio-1010-exec-2] ServerExceptionHandling                  : You are not authorised
+2026-01-30 05:25:00.908  WARN 7872 --- [http-nio-1010-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.api.org.exception.NotAuthorisedException: You are not authorised]
+2026-01-30 05:26:45.850  INFO 7872 --- [Thread-2354] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 05:26:45.852  INFO 7872 --- [Thread-2354] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2026-01-30 05:26:45.853  INFO 7872 --- [Thread-2354] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2026-01-30 05:26:45.865  INFO 7872 --- [Thread-2354] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
+2026-01-30 05:26:46.190  INFO 7872 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-6J2N3ET with PID 7872 (D:\Sasnetics\Projects\BEL\PMS\trackingSystem\target\classes started by lenovo in D:\Sasnetics\Projects\BEL\PMS\trackingSystem)
+2026-01-30 05:26:46.191  INFO 7872 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
+2026-01-30 05:26:47.127  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2026-01-30 05:26:47.246  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 118ms. Found 11 JPA repository interfaces.
+2026-01-30 05:26:47.431  INFO 7872 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2026-01-30 05:26:47.457  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2026-01-30 05:26:47.457  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:26:47.457  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:26:47.458  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:26:47.458  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2026-01-30 05:26:47.458  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:26:47.458  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:26:47.458  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:26:47.459  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:26:47.477  INFO 7872 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2026-01-30 05:26:47.512  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@14c70a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 05:26:47.522  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 05:26:47.548  INFO 7872 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2026-01-30 05:26:47.548  INFO 7872 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2026-01-30 05:26:48.091  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
+2026-01-30 05:26:48.092  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-30 05:26:48.092  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2026-01-30 05:26:48.145  INFO 7872 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
+2026-01-30 05:26:48.145  INFO 7872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1945 ms
+2026-01-30 05:26:48.389  WARN 7872 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 05:26:48.495  INFO 7872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2026-01-30 05:26:48.535  INFO 7872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 05:26:48.550  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Starting...
+2026-01-30 05:26:51.384  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Start completed.
+2026-01-30 05:26:51.386  INFO 7872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2026-01-30 05:26:51.760  INFO 7872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 05:26:53.166  INFO 7872 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1df0a69, org.springframework.security.web.context.SecurityContextPersistenceFilter@4a7a14, org.springframework.security.web.header.HeaderWriterFilter@1925e96, org.springframework.web.filter.CorsFilter@1ed21bb, org.springframework.security.web.authentication.logout.LogoutFilter@1bb60ed, com.api.org.security.JwtAuthenticationFilter@1de985a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@8aa851, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@19729b8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35c18a, org.springframework.security.web.session.SessionManagementFilter@1841ece, org.springframework.security.web.access.ExceptionTranslationFilter@14d3feb, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@51042a]
+2026-01-30 05:26:53.917  INFO 7872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-30 05:26:53.954  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
+2026-01-30 05:26:53.956  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2026-01-30 05:26:54.472  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2026-01-30 05:26:54.479  INFO 7872 --- [restartedMain] com.api.org.Application                  : Started Application in 8.385 seconds (JVM running for 83575.362)
+2026-01-30 05:26:54.483  INFO 7872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-30 05:27:04.094  INFO 7872 --- [http-nio-1010-exec-1] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-30 05:27:04.095  INFO 7872 --- [http-nio-1010-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-30 05:27:04.113  INFO 7872 --- [http-nio-1010-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2026-01-30 05:27:04.117  INFO 7872 --- [http-nio-1010-exec-1] c.a.o.security.JwtAuthenticationFilter   : jwt=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImlhdCI6MTc2OTczOTg2MCwiZXhwIjoxNzcwMzQ0NjYwfQ.eiyg87VvXn1crZqdKCgRwuUW2Dl9gnbY6AgCj9xkif7aLbIjul_8pBE-EQg8GuS2-_q0zeoTPzyYXHrHaAxf-w
+2026-01-30 05:27:04.119 ERROR 7872 --- [http-nio-1010-exec-1] com.api.org.security.JwtTokenProvider    : Invalid JWT token
+2026-01-30 05:27:04.122  INFO 7872 --- [http-nio-1010-exec-1] com.api.org.config.Interceptor           : Request -> Url : /trackingSystem/api/auth/register  Method : POST
+2026-01-30 05:27:05.456 ERROR 7872 --- [http-nio-1010-exec-1] ServerExceptionHandling                  : You are not authorised
+2026-01-30 05:27:05.470  WARN 7872 --- [http-nio-1010-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.api.org.exception.NotAuthorisedException: You are not authorised]
+2026-01-30 05:35:46.763  INFO 7872 --- [Thread-2589] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 05:35:46.764  INFO 7872 --- [Thread-2589] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2026-01-30 05:35:46.765  INFO 7872 --- [Thread-2589] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown initiated...
+2026-01-30 05:35:46.771  INFO 7872 --- [Thread-2589] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Shutdown completed.
+2026-01-30 05:35:47.005  INFO 7872 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-6J2N3ET with PID 7872 (D:\Sasnetics\Projects\BEL\PMS\trackingSystem\target\classes started by lenovo in D:\Sasnetics\Projects\BEL\PMS\trackingSystem)
+2026-01-30 05:35:47.006  INFO 7872 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
+2026-01-30 05:35:47.842  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2026-01-30 05:35:47.913  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70ms. Found 11 JPA repository interfaces.
+2026-01-30 05:35:48.009  INFO 7872 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2026-01-30 05:35:48.032  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2026-01-30 05:35:48.033  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:35:48.033  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:35:48.033  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:35:48.033  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2026-01-30 05:35:48.033  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:35:48.033  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:35:48.033  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:35:48.035  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:35:48.048  INFO 7872 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2026-01-30 05:35:48.065  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@883e21' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 05:35:48.069  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 05:35:48.084  INFO 7872 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2026-01-30 05:35:48.085  INFO 7872 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2026-01-30 05:35:48.319  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
+2026-01-30 05:35:48.320  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-30 05:35:48.320  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2026-01-30 05:35:48.340  INFO 7872 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
+2026-01-30 05:35:48.340  INFO 7872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1328 ms
+2026-01-30 05:35:48.453  WARN 7872 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 05:35:48.528  INFO 7872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2026-01-30 05:35:48.545  INFO 7872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 05:35:48.555  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Starting...
+2026-01-30 05:35:51.633  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Start completed.
+2026-01-30 05:35:51.634  INFO 7872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2026-01-30 05:35:51.980  INFO 7872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 05:35:52.972  INFO 7872 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ad44d5, org.springframework.security.web.context.SecurityContextPersistenceFilter@116bdce, org.springframework.security.web.header.HeaderWriterFilter@1da033d, org.springframework.web.filter.CorsFilter@aa9c6f, org.springframework.security.web.authentication.logout.LogoutFilter@2b2ef3, com.api.org.security.JwtAuthenticationFilter@1f34daa, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@159feed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@fd050, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@52f882, org.springframework.security.web.session.SessionManagementFilter@54cfc4, org.springframework.security.web.access.ExceptionTranslationFilter@1fd76cf, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@390f04]
+2026-01-30 05:35:53.486  INFO 7872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-30 05:35:53.526  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
+2026-01-30 05:35:53.528  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2026-01-30 05:35:54.012  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2026-01-30 05:35:54.021  INFO 7872 --- [restartedMain] com.api.org.Application                  : Started Application in 7.082 seconds (JVM running for 84114.904)
+2026-01-30 05:35:54.026  INFO 7872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-30 05:36:00.603  INFO 7872 --- [http-nio-1010-exec-1] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-30 05:36:00.605  INFO 7872 --- [http-nio-1010-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-30 05:36:00.634  INFO 7872 --- [http-nio-1010-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 28 ms
+2026-01-30 05:36:00.641  INFO 7872 --- [http-nio-1010-exec-1] c.a.o.security.JwtAuthenticationFilter   : bearerToken=Bearer Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImlhdCI6MTc2OTczOTg2MCwiZXhwIjoxNzcwMzQ0NjYwfQ.eiyg87VvXn1crZqdKCgRwuUW2Dl9gnbY6AgCj9xkif7aLbIjul_8pBE-EQg8GuS2-_q0zeoTPzyYXHrHaAxf-w
+2026-01-30 05:36:00.644  INFO 7872 --- [http-nio-1010-exec-1] c.a.o.security.JwtAuthenticationFilter   : jwt=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImlhdCI6MTc2OTczOTg2MCwiZXhwIjoxNzcwMzQ0NjYwfQ.eiyg87VvXn1crZqdKCgRwuUW2Dl9gnbY6AgCj9xkif7aLbIjul_8pBE-EQg8GuS2-_q0zeoTPzyYXHrHaAxf-w
+2026-01-30 05:36:00.648 ERROR 7872 --- [http-nio-1010-exec-1] com.api.org.security.JwtTokenProvider    : Invalid JWT token
+2026-01-30 05:36:00.656  INFO 7872 --- [http-nio-1010-exec-1] com.api.org.config.Interceptor           : Request -> Url : /trackingSystem/api/auth/register  Method : POST
+2026-01-30 05:36:01.972 ERROR 7872 --- [http-nio-1010-exec-1] ServerExceptionHandling                  : You are not authorised
+2026-01-30 05:36:01.986  WARN 7872 --- [http-nio-1010-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [com.api.org.exception.NotAuthorisedException: You are not authorised]
+2026-01-30 05:37:25.352  INFO 7872 --- [http-nio-1010-exec-3] c.a.o.security.JwtAuthenticationFilter   : bearerToken=Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImlhdCI6MTc2OTczOTg2MCwiZXhwIjoxNzcwMzQ0NjYwfQ.eiyg87VvXn1crZqdKCgRwuUW2Dl9gnbY6AgCj9xkif7aLbIjul_8pBE-EQg8GuS2-_q0zeoTPzyYXHrHaAxf-w
+2026-01-30 05:37:25.354  INFO 7872 --- [http-nio-1010-exec-3] c.a.o.security.JwtAuthenticationFilter   : jwt=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImlhdCI6MTc2OTczOTg2MCwiZXhwIjoxNzcwMzQ0NjYwfQ.eiyg87VvXn1crZqdKCgRwuUW2Dl9gnbY6AgCj9xkif7aLbIjul_8pBE-EQg8GuS2-_q0zeoTPzyYXHrHaAxf-w
+2026-01-30 05:37:26.099 DEBUG 7872 --- [http-nio-1010-exec-3] org.hibernate.SQL                        : 
+    select
+        users0_.id as id1_10_0_,
+        users0_.created_on as created_2_10_0_,
+        users0_.updated_on as updated_3_10_0_,
+        users0_.ani as ani4_10_0_,
+        users0_.email as email5_10_0_,
+        users0_.name as name6_10_0_,
+        users0_.password as password7_10_0_,
+        users0_.role as role8_10_0_,
+        users0_.sapId as sapid9_10_0_,
+        users0_.status as status10_10_0_,
+        users0_.thumbIsoTemplate as thumbis11_10_0_,
+        users0_.user_name as user_na12_10_0_ 
+    from
+        users users0_ 
+    where
+        users0_.id=?
+2026-01-30 05:37:26.102 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [19]
+2026-01-30 05:37:26.499 DEBUG 7872 --- [http-nio-1010-exec-3] org.hibernate.SQL                        : 
+    select
+        roles0_.id as id1_5_0_,
+        roles0_.menu_json as menu_jso2_5_0_,
+        roles0_.role as role3_5_0_,
+        roles0_.role_id as role_id4_5_0_ 
+    from
+        roles roles0_ 
+    where
+        roles0_.role_id=?
+2026-01-30 05:37:26.500 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [1]
+2026-01-30 05:37:27.649 DEBUG 7872 --- [http-nio-1010-exec-3] org.hibernate.SQL                        : 
+    select
+        userssessi0_.id as col_0_0_ 
+    from
+        users_session userssessi0_ 
+    where
+        userssessi0_.userid=? 
+        and userssessi0_.token=? limit ?
+2026-01-30 05:37:27.650 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [19]
+2026-01-30 05:37:27.651 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxOSIsImlhdCI6MTc2OTczOTg2MCwiZXhwIjoxNzcwMzQ0NjYwfQ.eiyg87VvXn1crZqdKCgRwuUW2Dl9gnbY6AgCj9xkif7aLbIjul_8pBE-EQg8GuS2-_q0zeoTPzyYXHrHaAxf-w]
+2026-01-30 05:37:27.978  INFO 7872 --- [http-nio-1010-exec-3] com.api.org.config.Interceptor           : Request -> Url : /trackingSystem/api/auth/register  Method : POST
+2026-01-30 05:37:28.310 DEBUG 7872 --- [http-nio-1010-exec-3] org.hibernate.SQL                        : 
+    select
+        users0_.id as id1_10_,
+        users0_.created_on as created_2_10_,
+        users0_.updated_on as updated_3_10_,
+        users0_.ani as ani4_10_,
+        users0_.email as email5_10_,
+        users0_.name as name6_10_,
+        users0_.password as password7_10_,
+        users0_.role as role8_10_,
+        users0_.sapId as sapid9_10_,
+        users0_.status as status10_10_,
+        users0_.thumbIsoTemplate as thumbis11_10_,
+        users0_.user_name as user_na12_10_ 
+    from
+        users users0_ 
+    where
+        users0_.user_name=?
+2026-01-30 05:37:28.312 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Hardeepjosan]
+2026-01-30 05:37:29.005 DEBUG 7872 --- [http-nio-1010-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (created_on, updated_on, ani, email, name, password, role, sapId, status, thumbIsoTemplate, user_name) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2026-01-30 05:37:29.007 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Fri Jan 30 05:37:28 GMT+03:00 2026]
+2026-01-30 05:37:29.009 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Fri Jan 30 05:37:28 GMT+03:00 2026]
+2026-01-30 05:37:29.009 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [null]
+2026-01-30 05:37:29.011 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [null]
+2026-01-30 05:37:29.011 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [VARCHAR] - [HS]
+2026-01-30 05:37:29.012 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [VARCHAR] - [$2a$10$RC/3mbJGODXOeTg6/WfP9uqekVhvT1NXE65eIopxn.WpoabJ2QQSS]
+2026-01-30 05:37:29.013 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [INTEGER] - [1]
+2026-01-30 05:37:29.014 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [8] as [VARCHAR] - [null]
+2026-01-30 05:37:29.014 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [9] as [INTEGER] - [null]
+2026-01-30 05:37:29.015 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [10] as [CLOB] - [null]
+2026-01-30 05:37:29.015 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [11] as [VARCHAR] - [Hardeepjosan]
+2026-01-30 05:37:29.728 DEBUG 7872 --- [http-nio-1010-exec-3] org.hibernate.SQL                        : 
+    select
+        users0_.id as id1_10_,
+        users0_.created_on as created_2_10_,
+        users0_.updated_on as updated_3_10_,
+        users0_.ani as ani4_10_,
+        users0_.email as email5_10_,
+        users0_.name as name6_10_,
+        users0_.password as password7_10_,
+        users0_.role as role8_10_,
+        users0_.sapId as sapid9_10_,
+        users0_.status as status10_10_,
+        users0_.thumbIsoTemplate as thumbis11_10_,
+        users0_.user_name as user_na12_10_ 
+    from
+        users users0_ 
+    where
+        users0_.user_name=?
+2026-01-30 05:37:29.731 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Hardeepjosan]
+2026-01-30 05:37:30.458 DEBUG 7872 --- [http-nio-1010-exec-3] org.hibernate.SQL                        : 
+    delete 
+    from
+        users_session 
+    where
+        userid=?
+2026-01-30 05:37:30.459 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [20]
+2026-01-30 05:37:30.790 DEBUG 7872 --- [http-nio-1010-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        users_session
+        (created_on, header, token, userid) 
+    values
+        (?, ?, ?, ?)
+2026-01-30 05:37:30.792 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [null]
+2026-01-30 05:37:30.792 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [null]
+2026-01-30 05:37:30.793 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMCIsImlhdCI6MTc2OTc0MDY1MCwiZXhwIjoxNzcwMzQ1NDUwfQ.z9OcQPhVRKIyxCNGTZRXJsH_Fm4DXzSAcef-NFAsTJzco6CJ63XjrJsnl_hCHtMKugOTuC0YgTl92Zp81hVlIA]
+2026-01-30 05:37:30.794 TRACE 7872 --- [http-nio-1010-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [BIGINT] - [20]
+2026-01-30 05:37:31.768  INFO 7872 --- [http-nio-1010-exec-3] com.api.org.config.Interceptor           : Response -> status : 200
+2026-01-30 05:45:42.649  INFO 7872 --- [Thread-2824] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 05:45:42.650  INFO 7872 --- [Thread-2824] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2026-01-30 05:45:42.650  INFO 7872 --- [Thread-2824] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown initiated...
+2026-01-30 05:45:42.660  INFO 7872 --- [Thread-2824] com.zaxxer.hikari.HikariDataSource       : HikariPool-13 - Shutdown completed.
+2026-01-30 05:45:42.906  INFO 7872 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-6J2N3ET with PID 7872 (D:\Sasnetics\Projects\BEL\PMS\trackingSystem\target\classes started by lenovo in D:\Sasnetics\Projects\BEL\PMS\trackingSystem)
+2026-01-30 05:45:42.907  INFO 7872 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
+2026-01-30 05:45:43.773  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2026-01-30 05:45:43.884  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109ms. Found 11 JPA repository interfaces.
+2026-01-30 05:45:44.026  INFO 7872 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2026-01-30 05:45:44.048  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2026-01-30 05:45:44.048  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:45:44.048  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:45:44.048  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:45:44.049  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2026-01-30 05:45:44.049  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:45:44.049  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:45:44.049  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:45:44.049  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:45:44.063  INFO 7872 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2026-01-30 05:45:44.111  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@690716' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 05:45:44.126  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 05:45:44.158  INFO 7872 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2026-01-30 05:45:44.158  INFO 7872 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2026-01-30 05:45:44.545  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
+2026-01-30 05:45:44.547  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-30 05:45:44.547  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2026-01-30 05:45:44.588  INFO 7872 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
+2026-01-30 05:45:44.588  INFO 7872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1666 ms
+2026-01-30 05:45:44.804  WARN 7872 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 05:45:44.971  INFO 7872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2026-01-30 05:45:45.044  INFO 7872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 05:45:45.077  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Starting...
+2026-01-30 05:45:47.959  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Start completed.
+2026-01-30 05:45:47.960  INFO 7872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2026-01-30 05:45:48.219  INFO 7872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 05:45:49.554  INFO 7872 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@63d598, org.springframework.security.web.context.SecurityContextPersistenceFilter@1115471, org.springframework.security.web.header.HeaderWriterFilter@1537789, org.springframework.web.filter.CorsFilter@b8db14, org.springframework.security.web.authentication.logout.LogoutFilter@15d1160, com.api.org.security.JwtAuthenticationFilter@be616f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@272d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@dff29b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@139abdb, org.springframework.security.web.session.SessionManagementFilter@b689bf, org.springframework.security.web.access.ExceptionTranslationFilter@10208c6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@19503a]
+2026-01-30 05:45:49.969  INFO 7872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-30 05:45:50.032  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
+2026-01-30 05:45:50.035  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2026-01-30 05:45:51.072  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2026-01-30 05:45:51.087  INFO 7872 --- [restartedMain] com.api.org.Application                  : Started Application in 8.261 seconds (JVM running for 84711.971)
+2026-01-30 05:45:51.094  INFO 7872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-30 05:50:04.984  INFO 7872 --- [Thread-3059] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 05:50:04.986  INFO 7872 --- [Thread-3059] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2026-01-30 05:50:04.986  INFO 7872 --- [Thread-3059] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown initiated...
+2026-01-30 05:50:05.002  INFO 7872 --- [Thread-3059] com.zaxxer.hikari.HikariDataSource       : HikariPool-14 - Shutdown completed.
+2026-01-30 05:50:05.307  INFO 7872 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-6J2N3ET with PID 7872 (D:\Sasnetics\Projects\BEL\PMS\trackingSystem\target\classes started by lenovo in D:\Sasnetics\Projects\BEL\PMS\trackingSystem)
+2026-01-30 05:50:05.308  INFO 7872 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
+2026-01-30 05:50:06.230  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2026-01-30 05:50:06.331  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 102ms. Found 11 JPA repository interfaces.
+2026-01-30 05:50:06.481  INFO 7872 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2026-01-30 05:50:06.512  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2026-01-30 05:50:06.512  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:50:06.513  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:50:06.513  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:50:06.514  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2026-01-30 05:50:06.514  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:50:06.514  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:50:06.515  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:50:06.515  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:50:06.541  INFO 7872 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2026-01-30 05:50:06.581  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@57f30f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 05:50:06.592  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 05:50:06.644  INFO 7872 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2026-01-30 05:50:06.647  INFO 7872 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2026-01-30 05:50:07.190  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
+2026-01-30 05:50:07.192  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-30 05:50:07.192  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2026-01-30 05:50:07.259  INFO 7872 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
+2026-01-30 05:50:07.259  INFO 7872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1945 ms
+2026-01-30 05:50:07.555  WARN 7872 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 05:50:07.671  INFO 7872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2026-01-30 05:50:07.699  INFO 7872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 05:50:07.726  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Starting...
+2026-01-30 05:50:10.645  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Start completed.
+2026-01-30 05:50:10.646  INFO 7872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2026-01-30 05:50:10.961  INFO 7872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 05:50:12.126  INFO 7872 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c5f627, org.springframework.security.web.context.SecurityContextPersistenceFilter@10fa8a5, org.springframework.security.web.header.HeaderWriterFilter@8250fa, org.springframework.web.filter.CorsFilter@14a025d, org.springframework.security.web.authentication.logout.LogoutFilter@185df2a, com.api.org.security.JwtAuthenticationFilter@113cddb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@895b8c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@d0c527, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@a53d39, org.springframework.security.web.session.SessionManagementFilter@51a4e0, org.springframework.security.web.access.ExceptionTranslationFilter@13c8c64, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@8609ce]
+2026-01-30 05:50:12.472  INFO 7872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-30 05:50:12.511  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
+2026-01-30 05:50:12.513  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2026-01-30 05:50:13.294  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2026-01-30 05:50:13.302  INFO 7872 --- [restartedMain] com.api.org.Application                  : Started Application in 8.056 seconds (JVM running for 84974.185)
+2026-01-30 05:50:13.305  INFO 7872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-30 05:51:12.342  INFO 7872 --- [Thread-3294] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 05:51:12.343  INFO 7872 --- [Thread-3294] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2026-01-30 05:51:12.343  INFO 7872 --- [Thread-3294] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown initiated...
+2026-01-30 05:51:12.351  INFO 7872 --- [Thread-3294] com.zaxxer.hikari.HikariDataSource       : HikariPool-15 - Shutdown completed.
+2026-01-30 05:51:12.600  INFO 7872 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-6J2N3ET with PID 7872 (D:\Sasnetics\Projects\BEL\PMS\trackingSystem\target\classes started by lenovo in D:\Sasnetics\Projects\BEL\PMS\trackingSystem)
+2026-01-30 05:51:12.602  INFO 7872 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
+2026-01-30 05:51:13.496  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2026-01-30 05:51:13.649  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 152ms. Found 11 JPA repository interfaces.
+2026-01-30 05:51:13.826  INFO 7872 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2026-01-30 05:51:13.850  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2026-01-30 05:51:13.851  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:51:13.851  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:51:13.851  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:51:13.851  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2026-01-30 05:51:13.853  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:51:13.853  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:51:13.853  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:51:13.853  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:51:13.872  INFO 7872 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2026-01-30 05:51:13.901  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@193028e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 05:51:13.908  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 05:51:13.937  INFO 7872 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2026-01-30 05:51:13.938  INFO 7872 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2026-01-30 05:51:14.422  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
+2026-01-30 05:51:14.422  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-30 05:51:14.422  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2026-01-30 05:51:14.470  INFO 7872 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
+2026-01-30 05:51:14.470  INFO 7872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1859 ms
+2026-01-30 05:51:14.702  WARN 7872 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 05:51:14.843  INFO 7872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2026-01-30 05:51:14.875  INFO 7872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 05:51:14.891  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Starting...
+2026-01-30 05:51:17.807  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Start completed.
+2026-01-30 05:51:17.808  INFO 7872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2026-01-30 05:51:17.946  INFO 7872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 05:51:18.824  INFO 7872 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@181b287, org.springframework.security.web.context.SecurityContextPersistenceFilter@fbe894, org.springframework.security.web.header.HeaderWriterFilter@ce1cbd, org.springframework.web.filter.CorsFilter@1a85390, org.springframework.security.web.authentication.logout.LogoutFilter@5c4170, com.api.org.security.JwtAuthenticationFilter@1be4fb0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17e5dd5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@17b87b3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@856c2f, org.springframework.security.web.session.SessionManagementFilter@19fed07, org.springframework.security.web.access.ExceptionTranslationFilter@11752ac, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@197c4a7]
+2026-01-30 05:51:19.028  INFO 7872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-30 05:51:19.056  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
+2026-01-30 05:51:19.058  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2026-01-30 05:51:19.847  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2026-01-30 05:51:19.858  INFO 7872 --- [restartedMain] com.api.org.Application                  : Started Application in 7.321 seconds (JVM running for 85040.742)
+2026-01-30 05:51:19.867  INFO 7872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-30 05:51:27.715  INFO 7872 --- [Thread-3529] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 05:51:27.716  INFO 7872 --- [Thread-3529] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2026-01-30 05:51:27.718  INFO 7872 --- [Thread-3529] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown initiated...
+2026-01-30 05:51:29.100  INFO 7872 --- [Thread-3529] com.zaxxer.hikari.HikariDataSource       : HikariPool-16 - Shutdown completed.
+2026-01-30 05:51:29.351  INFO 7872 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-6J2N3ET with PID 7872 (D:\Sasnetics\Projects\BEL\PMS\trackingSystem\target\classes started by lenovo in D:\Sasnetics\Projects\BEL\PMS\trackingSystem)
+2026-01-30 05:51:29.352  INFO 7872 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
+2026-01-30 05:51:30.103  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2026-01-30 05:51:30.208  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 104ms. Found 11 JPA repository interfaces.
+2026-01-30 05:51:30.340  INFO 7872 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2026-01-30 05:51:30.360  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2026-01-30 05:51:30.360  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:51:30.360  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:51:30.361  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:51:30.361  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2026-01-30 05:51:30.361  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:51:30.361  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:51:30.361  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:51:30.361  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:51:30.376  INFO 7872 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2026-01-30 05:51:30.401  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@fc9201' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 05:51:30.411  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 05:51:30.442  INFO 7872 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2026-01-30 05:51:30.442  INFO 7872 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2026-01-30 05:51:30.813  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
+2026-01-30 05:51:30.815  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-30 05:51:30.815  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2026-01-30 05:51:30.852  INFO 7872 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
+2026-01-30 05:51:30.853  INFO 7872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1495 ms
+2026-01-30 05:51:31.022  WARN 7872 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 05:51:31.095  INFO 7872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2026-01-30 05:51:31.118  INFO 7872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 05:51:31.144  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Starting...
+2026-01-30 05:51:33.903  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Start completed.
+2026-01-30 05:51:33.905  INFO 7872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2026-01-30 05:51:34.309  INFO 7872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 05:51:35.421  INFO 7872 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1323aae, org.springframework.security.web.context.SecurityContextPersistenceFilter@aade3c, org.springframework.security.web.header.HeaderWriterFilter@1c32601, org.springframework.web.filter.CorsFilter@ab450f, org.springframework.security.web.authentication.logout.LogoutFilter@1bd2d91, com.api.org.security.JwtAuthenticationFilter@49f098, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@16c2a6e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@189fcac, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@22fbe4, org.springframework.security.web.session.SessionManagementFilter@1dea6bd, org.springframework.security.web.access.ExceptionTranslationFilter@152d2fd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@10afd7b]
+2026-01-30 05:51:35.790  INFO 7872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-30 05:51:35.836  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
+2026-01-30 05:51:35.837  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2026-01-30 05:51:36.676  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2026-01-30 05:51:36.684  INFO 7872 --- [restartedMain] com.api.org.Application                  : Started Application in 7.402 seconds (JVM running for 85057.567)
+2026-01-30 05:51:36.690  INFO 7872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-30 05:55:56.230  INFO 7872 --- [Thread-3764] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 05:55:56.231  INFO 7872 --- [Thread-3764] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2026-01-30 05:55:56.231  INFO 7872 --- [Thread-3764] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Shutdown initiated...
+2026-01-30 05:55:56.235  INFO 7872 --- [Thread-3764] com.zaxxer.hikari.HikariDataSource       : HikariPool-17 - Shutdown completed.
+2026-01-30 05:55:56.362  INFO 7872 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-6J2N3ET with PID 7872 (D:\Sasnetics\Projects\BEL\PMS\trackingSystem\target\classes started by lenovo in D:\Sasnetics\Projects\BEL\PMS\trackingSystem)
+2026-01-30 05:55:56.363  INFO 7872 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
+2026-01-30 05:55:56.717  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2026-01-30 05:55:56.768  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51ms. Found 11 JPA repository interfaces.
+2026-01-30 05:55:56.838  INFO 7872 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2026-01-30 05:55:56.847  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2026-01-30 05:55:56.847  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:55:56.847  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:55:56.847  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:55:56.847  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2026-01-30 05:55:56.847  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:55:56.847  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:55:56.847  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:55:56.847  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:55:56.854  INFO 7872 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2026-01-30 05:55:56.866  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@120ee68' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 05:55:56.869  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 05:55:56.878  INFO 7872 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2026-01-30 05:55:56.878  INFO 7872 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2026-01-30 05:55:57.066  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
+2026-01-30 05:55:57.067  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-30 05:55:57.067  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2026-01-30 05:55:57.094  INFO 7872 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
+2026-01-30 05:55:57.094  INFO 7872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 727 ms
+2026-01-30 05:55:57.201  WARN 7872 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 05:55:57.271  INFO 7872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2026-01-30 05:55:57.286  INFO 7872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 05:55:57.293  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Starting...
+2026-01-30 05:56:00.213  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Start completed.
+2026-01-30 05:56:00.215  INFO 7872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2026-01-30 05:56:00.342  INFO 7872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 05:56:00.840  INFO 7872 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@bf548c, org.springframework.security.web.context.SecurityContextPersistenceFilter@a6a174, org.springframework.security.web.header.HeaderWriterFilter@1adaf02, org.springframework.web.filter.CorsFilter@5fe371, org.springframework.security.web.authentication.logout.LogoutFilter@1b72943, com.api.org.security.JwtAuthenticationFilter@6d54ae, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@902620, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@775acf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@19bfa4d, org.springframework.security.web.session.SessionManagementFilter@ac4b4e, org.springframework.security.web.access.ExceptionTranslationFilter@cfce3e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d27c6]
+2026-01-30 05:56:01.119  INFO 7872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-30 05:56:01.134  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
+2026-01-30 05:56:01.135  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2026-01-30 05:56:01.370  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2026-01-30 05:56:01.374  INFO 7872 --- [restartedMain] com.api.org.Application                  : Started Application in 5.046 seconds (JVM running for 85322.258)
+2026-01-30 05:56:01.376  INFO 7872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-30 05:56:48.385  INFO 7872 --- [Thread-3999] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 05:56:48.386  INFO 7872 --- [Thread-3999] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2026-01-30 05:56:48.386  INFO 7872 --- [Thread-3999] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Shutdown initiated...
+2026-01-30 05:56:48.391  INFO 7872 --- [Thread-3999] com.zaxxer.hikari.HikariDataSource       : HikariPool-18 - Shutdown completed.
+2026-01-30 05:56:48.527  INFO 7872 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-6J2N3ET with PID 7872 (D:\Sasnetics\Projects\BEL\PMS\trackingSystem\target\classes started by lenovo in D:\Sasnetics\Projects\BEL\PMS\trackingSystem)
+2026-01-30 05:56:48.527  INFO 7872 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
+2026-01-30 05:56:48.832  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2026-01-30 05:56:48.871  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38ms. Found 11 JPA repository interfaces.
+2026-01-30 05:56:48.931  INFO 7872 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2026-01-30 05:56:48.940  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2026-01-30 05:56:48.940  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:56:48.940  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:56:48.940  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:56:48.940  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2026-01-30 05:56:48.940  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 05:56:48.940  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:56:48.940  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:56:48.940  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 05:56:48.945  INFO 7872 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2026-01-30 05:56:48.955  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@190933e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 05:56:48.957  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 05:56:48.965  INFO 7872 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2026-01-30 05:56:48.965  INFO 7872 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2026-01-30 05:56:49.120  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
+2026-01-30 05:56:49.120  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-30 05:56:49.122  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2026-01-30 05:56:49.140  INFO 7872 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
+2026-01-30 05:56:49.140  INFO 7872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 611 ms
+2026-01-30 05:56:49.219  WARN 7872 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 05:56:49.257  INFO 7872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2026-01-30 05:56:49.274  INFO 7872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 05:56:49.287  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Starting...
+2026-01-30 05:56:51.934  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Start completed.
+2026-01-30 05:56:51.935  INFO 7872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2026-01-30 05:56:52.072  INFO 7872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 05:56:52.659  INFO 7872 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1eb6ffe, org.springframework.security.web.context.SecurityContextPersistenceFilter@82b3e4, org.springframework.security.web.header.HeaderWriterFilter@11a823e, org.springframework.web.filter.CorsFilter@159b686, org.springframework.security.web.authentication.logout.LogoutFilter@1e0b088, com.api.org.security.JwtAuthenticationFilter@dfe76a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@39ed5c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1698557, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@cd1197, org.springframework.security.web.session.SessionManagementFilter@df2be3, org.springframework.security.web.access.ExceptionTranslationFilter@1d4dcd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1c1313]
+2026-01-30 05:56:52.782  INFO 7872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-30 05:56:52.798  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
+2026-01-30 05:56:52.799  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2026-01-30 05:56:53.114  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2026-01-30 05:56:53.118  INFO 7872 --- [restartedMain] com.api.org.Application                  : Started Application in 4.616 seconds (JVM running for 85374.001)
+2026-01-30 05:56:53.121  INFO 7872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-30 05:56:56.937  INFO 7872 --- [http-nio-1010-exec-1] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-30 05:56:56.937  INFO 7872 --- [http-nio-1010-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-30 05:56:56.944  INFO 7872 --- [http-nio-1010-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2026-01-30 05:56:56.948  INFO 7872 --- [http-nio-1010-exec-1] c.a.o.security.JwtAuthenticationFilter   : bearerToken=null
+2026-01-30 05:56:56.948  INFO 7872 --- [http-nio-1010-exec-1] c.a.o.security.JwtAuthenticationFilter   : jwt=null
+2026-01-30 05:56:56.950  INFO 7872 --- [http-nio-1010-exec-1] com.api.org.config.Interceptor           : Request -> Url : /trackingSystem/swagger-ui/index.html  Method : GET
+2026-01-30 05:56:56.962  INFO 7872 --- [http-nio-1010-exec-1] com.api.org.config.Interceptor           : Response -> status : 200
+2026-01-30 05:56:56.980  INFO 7872 --- [http-nio-1010-exec-3] c.a.o.security.JwtAuthenticationFilter   : bearerToken=null
+2026-01-30 05:56:56.981  INFO 7872 --- [http-nio-1010-exec-2] c.a.o.security.JwtAuthenticationFilter   : bearerToken=null
+2026-01-30 05:56:56.981  INFO 7872 --- [http-nio-1010-exec-3] c.a.o.security.JwtAuthenticationFilter   : jwt=null
+2026-01-30 05:56:56.981  INFO 7872 --- [http-nio-1010-exec-2] c.a.o.security.JwtAuthenticationFilter   : jwt=null
+2026-01-30 05:56:56.981  INFO 7872 --- [http-nio-1010-exec-4] c.a.o.security.JwtAuthenticationFilter   : bearerToken=null
+2026-01-30 05:56:56.981  INFO 7872 --- [http-nio-1010-exec-4] c.a.o.security.JwtAuthenticationFilter   : jwt=null
+2026-01-30 05:56:56.982  INFO 7872 --- [http-nio-1010-exec-2] com.api.org.config.Interceptor           : Request -> Url : /trackingSystem/swagger-ui/swagger-ui.css  Method : GET
+2026-01-30 05:56:56.982  INFO 7872 --- [http-nio-1010-exec-3] com.api.org.config.Interceptor           : Request -> Url : /trackingSystem/swagger-ui/swagger-ui-bundle.js  Method : GET
+2026-01-30 05:56:56.982  INFO 7872 --- [http-nio-1010-exec-4] com.api.org.config.Interceptor           : Request -> Url : /trackingSystem/swagger-ui/swagger-ui-standalone-preset.js  Method : GET
+2026-01-30 05:56:56.997  INFO 7872 --- [http-nio-1010-exec-2] com.api.org.config.Interceptor           : Response -> status : 200
+2026-01-30 05:56:57.020  INFO 7872 --- [http-nio-1010-exec-4] com.api.org.config.Interceptor           : Response -> status : 200
+2026-01-30 05:56:57.063  INFO 7872 --- [http-nio-1010-exec-3] com.api.org.config.Interceptor           : Response -> status : 200
+2026-01-30 05:57:02.415  INFO 7872 --- [http-nio-1010-exec-5] c.a.o.security.JwtAuthenticationFilter   : bearerToken=null
+2026-01-30 05:57:02.416  INFO 7872 --- [http-nio-1010-exec-5] c.a.o.security.JwtAuthenticationFilter   : jwt=null
+2026-01-30 05:57:02.417  INFO 7872 --- [http-nio-1010-exec-5] com.api.org.config.Interceptor           : Request -> Url : /trackingSystem/swagger-ui/index.html  Method : GET
+2026-01-30 05:57:02.420  INFO 7872 --- [http-nio-1010-exec-5] com.api.org.config.Interceptor           : Response -> status : 200
+2026-01-30 05:57:02.434  INFO 7872 --- [http-nio-1010-exec-7] c.a.o.security.JwtAuthenticationFilter   : bearerToken=null
+2026-01-30 05:57:02.434  INFO 7872 --- [http-nio-1010-exec-6] c.a.o.security.JwtAuthenticationFilter   : bearerToken=null
+2026-01-30 05:57:02.434  INFO 7872 --- [http-nio-1010-exec-8] c.a.o.security.JwtAuthenticationFilter   : bearerToken=null
+2026-01-30 05:57:02.434  INFO 7872 --- [http-nio-1010-exec-7] c.a.o.security.JwtAuthenticationFilter   : jwt=null
+2026-01-30 05:57:02.434  INFO 7872 --- [http-nio-1010-exec-6] c.a.o.security.JwtAuthenticationFilter   : jwt=null
+2026-01-30 05:57:02.435  INFO 7872 --- [http-nio-1010-exec-8] c.a.o.security.JwtAuthenticationFilter   : jwt=null
+2026-01-30 05:57:02.435  INFO 7872 --- [http-nio-1010-exec-6] com.api.org.config.Interceptor           : Request -> Url : /trackingSystem/swagger-ui/swagger-ui.css  Method : GET
+2026-01-30 05:57:02.435  INFO 7872 --- [http-nio-1010-exec-7] com.api.org.config.Interceptor           : Request -> Url : /trackingSystem/swagger-ui/swagger-ui-bundle.js  Method : GET
+2026-01-30 05:57:02.436  INFO 7872 --- [http-nio-1010-exec-8] com.api.org.config.Interceptor           : Request -> Url : /trackingSystem/swagger-ui/swagger-ui-standalone-preset.js  Method : GET
+2026-01-30 05:57:02.447  INFO 7872 --- [http-nio-1010-exec-6] com.api.org.config.Interceptor           : Response -> status : 200
+2026-01-30 05:57:02.471  INFO 7872 --- [http-nio-1010-exec-8] com.api.org.config.Interceptor           : Response -> status : 200
+2026-01-30 05:57:02.523  INFO 7872 --- [http-nio-1010-exec-7] com.api.org.config.Interceptor           : Response -> status : 200
+2026-01-30 05:57:02.563  INFO 7872 --- [http-nio-1010-exec-9] c.a.o.security.JwtAuthenticationFilter   : bearerToken=null
+2026-01-30 05:57:02.564  INFO 7872 --- [http-nio-1010-exec-9] c.a.o.security.JwtAuthenticationFilter   : jwt=null
+2026-01-30 05:57:02.564  INFO 7872 --- [http-nio-1010-exec-9] com.api.org.config.Interceptor           : Request -> Url : /trackingSystem/v3/api-docs/swagger-config  Method : GET
+2026-01-30 05:57:02.571  INFO 7872 --- [http-nio-1010-exec-9] com.api.org.config.Interceptor           : Response -> status : 200
+2026-01-30 05:57:02.582  INFO 7872 --- [http-nio-1010-exec-10] c.a.o.security.JwtAuthenticationFilter   : bearerToken=null
+2026-01-30 05:57:02.584  INFO 7872 --- [http-nio-1010-exec-10] c.a.o.security.JwtAuthenticationFilter   : jwt=null
+2026-01-30 05:57:02.585  INFO 7872 --- [http-nio-1010-exec-10] com.api.org.config.Interceptor           : Request -> Url : /trackingSystem/v3/api-docs  Method : GET
+2026-01-30 05:57:02.822  INFO 7872 --- [http-nio-1010-exec-10] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 234 ms
+2026-01-30 05:57:02.830  INFO 7872 --- [http-nio-1010-exec-10] com.api.org.config.Interceptor           : Response -> status : 200
+2026-01-30 06:00:33.632  INFO 7872 --- [Thread-4234] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 06:00:33.632  INFO 7872 --- [Thread-4234] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2026-01-30 06:00:33.632  INFO 7872 --- [Thread-4234] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Shutdown initiated...
+2026-01-30 06:00:33.635  INFO 7872 --- [Thread-4234] com.zaxxer.hikari.HikariDataSource       : HikariPool-19 - Shutdown completed.
+2026-01-30 06:00:33.756  INFO 7872 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-6J2N3ET with PID 7872 (D:\Sasnetics\Projects\BEL\PMS\trackingSystem\target\classes started by lenovo in D:\Sasnetics\Projects\BEL\PMS\trackingSystem)
+2026-01-30 06:00:33.756  INFO 7872 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
+2026-01-30 06:00:34.076  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2026-01-30 06:00:34.116  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38ms. Found 11 JPA repository interfaces.
+2026-01-30 06:00:34.172  INFO 7872 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2026-01-30 06:00:34.181  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2026-01-30 06:00:34.181  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:00:34.181  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:00:34.181  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:00:34.182  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2026-01-30 06:00:34.182  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:00:34.182  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:00:34.182  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:00:34.182  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:00:34.189  INFO 7872 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2026-01-30 06:00:34.200  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@16eff39' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 06:00:34.204  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 06:00:34.212  INFO 7872 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2026-01-30 06:00:34.212  INFO 7872 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2026-01-30 06:00:34.371  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
+2026-01-30 06:00:34.371  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-30 06:00:34.371  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2026-01-30 06:00:34.390  INFO 7872 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
+2026-01-30 06:00:34.391  INFO 7872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 632 ms
+2026-01-30 06:00:34.470  WARN 7872 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 06:00:34.511  INFO 7872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2026-01-30 06:00:34.524  INFO 7872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 06:00:34.531  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Starting...
+2026-01-30 06:00:37.369  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Start completed.
+2026-01-30 06:00:37.371  INFO 7872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2026-01-30 06:00:37.487  INFO 7872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 06:00:38.154  INFO 7872 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1397d15, org.springframework.security.web.context.SecurityContextPersistenceFilter@17707bd, org.springframework.security.web.header.HeaderWriterFilter@1718b45, org.springframework.web.filter.CorsFilter@1bfad06, org.springframework.security.web.authentication.logout.LogoutFilter@9e08e9, com.api.org.security.JwtAuthenticationFilter@fce7c1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7bc73f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@15d4956, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1b9c631, org.springframework.security.web.session.SessionManagementFilter@3a9f97, org.springframework.security.web.access.ExceptionTranslationFilter@95ae12, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3e505d]
+2026-01-30 06:00:38.299  INFO 7872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-30 06:00:38.313  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
+2026-01-30 06:00:38.314  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2026-01-30 06:00:38.658  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2026-01-30 06:00:38.664  INFO 7872 --- [restartedMain] com.api.org.Application                  : Started Application in 4.938 seconds (JVM running for 85599.546)
+2026-01-30 06:00:38.665  INFO 7872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-30 06:02:03.535  INFO 7872 --- [Thread-4469] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 06:02:03.536  INFO 7872 --- [Thread-4469] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2026-01-30 06:02:03.537  INFO 7872 --- [Thread-4469] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Shutdown initiated...
+2026-01-30 06:02:03.541  INFO 7872 --- [Thread-4469] com.zaxxer.hikari.HikariDataSource       : HikariPool-20 - Shutdown completed.
+2026-01-30 06:02:03.723  INFO 7872 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-6J2N3ET with PID 7872 (D:\Sasnetics\Projects\BEL\PMS\trackingSystem\target\classes started by lenovo in D:\Sasnetics\Projects\BEL\PMS\trackingSystem)
+2026-01-30 06:02:03.724  INFO 7872 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
+2026-01-30 06:02:04.154  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2026-01-30 06:02:04.205  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50ms. Found 11 JPA repository interfaces.
+2026-01-30 06:02:04.278  INFO 7872 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2026-01-30 06:02:04.289  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2026-01-30 06:02:04.289  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:02:04.289  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:02:04.289  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:02:04.289  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2026-01-30 06:02:04.289  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:02:04.289  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:02:04.289  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:02:04.289  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:02:04.299  INFO 7872 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2026-01-30 06:02:04.313  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@121b03d' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 06:02:04.315  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 06:02:04.326  INFO 7872 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2026-01-30 06:02:04.326  INFO 7872 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2026-01-30 06:02:04.502  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
+2026-01-30 06:02:04.503  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-30 06:02:04.503  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2026-01-30 06:02:04.522  INFO 7872 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
+2026-01-30 06:02:04.523  INFO 7872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 794 ms
+2026-01-30 06:02:04.617  WARN 7872 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 06:02:04.660  INFO 7872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2026-01-30 06:02:04.670  INFO 7872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 06:02:04.679  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Starting...
+2026-01-30 06:02:07.431  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Start completed.
+2026-01-30 06:02:07.431  INFO 7872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2026-01-30 06:02:07.596  INFO 7872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 06:02:08.150  INFO 7872 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a71e, org.springframework.security.web.context.SecurityContextPersistenceFilter@549457, org.springframework.security.web.header.HeaderWriterFilter@280eda, org.springframework.web.filter.CorsFilter@2e1a9d, org.springframework.security.web.authentication.logout.LogoutFilter@1d33091, com.api.org.security.JwtAuthenticationFilter@b31a00, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1263364, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@16cb644, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1be57dd, org.springframework.security.web.session.SessionManagementFilter@fc8eaa, org.springframework.security.web.access.ExceptionTranslationFilter@16c01b8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@454ae9]
+2026-01-30 06:02:08.282  INFO 7872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-30 06:02:08.296  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
+2026-01-30 06:02:08.297  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2026-01-30 06:02:08.628  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2026-01-30 06:02:08.631  INFO 7872 --- [restartedMain] com.api.org.Application                  : Started Application in 4.947 seconds (JVM running for 85689.514)
+2026-01-30 06:02:08.632  INFO 7872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-30 06:02:11.283  INFO 7872 --- [Thread-4704] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 06:02:11.284  INFO 7872 --- [Thread-4704] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2026-01-30 06:02:11.284  INFO 7872 --- [Thread-4704] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Shutdown initiated...
+2026-01-30 06:02:12.165  INFO 7872 --- [Thread-4704] com.zaxxer.hikari.HikariDataSource       : HikariPool-21 - Shutdown completed.
+2026-01-30 06:02:12.331  INFO 7872 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-6J2N3ET with PID 7872 (D:\Sasnetics\Projects\BEL\PMS\trackingSystem\target\classes started by lenovo in D:\Sasnetics\Projects\BEL\PMS\trackingSystem)
+2026-01-30 06:02:12.331  INFO 7872 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
+2026-01-30 06:02:12.730  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2026-01-30 06:02:12.777  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47ms. Found 11 JPA repository interfaces.
+2026-01-30 06:02:12.849  INFO 7872 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2026-01-30 06:02:12.858  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2026-01-30 06:02:12.859  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:02:12.859  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:02:12.859  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:02:12.859  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2026-01-30 06:02:12.859  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:02:12.859  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:02:12.859  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:02:12.859  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:02:12.866  INFO 7872 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2026-01-30 06:02:12.878  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6ef470' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 06:02:12.882  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 06:02:12.892  INFO 7872 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2026-01-30 06:02:12.893  INFO 7872 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2026-01-30 06:02:13.076  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
+2026-01-30 06:02:13.076  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-30 06:02:13.076  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2026-01-30 06:02:13.094  INFO 7872 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
+2026-01-30 06:02:13.094  INFO 7872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 757 ms
+2026-01-30 06:02:13.205  WARN 7872 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 06:02:13.267  INFO 7872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2026-01-30 06:02:13.280  INFO 7872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 06:02:13.286  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Starting...
+2026-01-30 06:02:16.159  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Start completed.
+2026-01-30 06:02:16.159  INFO 7872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2026-01-30 06:02:16.297  INFO 7872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 06:02:17.059  INFO 7872 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@80b14a, org.springframework.security.web.context.SecurityContextPersistenceFilter@84591a, org.springframework.security.web.header.HeaderWriterFilter@db490e, org.springframework.web.filter.CorsFilter@15b2fe0, org.springframework.security.web.authentication.logout.LogoutFilter@fccafc, com.api.org.security.JwtAuthenticationFilter@1320102, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@507e74, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@afde89, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c4ce7d, org.springframework.security.web.session.SessionManagementFilter@71c0ce, org.springframework.security.web.access.ExceptionTranslationFilter@db94fa, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1dad185]
+2026-01-30 06:02:17.349  INFO 7872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-30 06:02:17.369  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
+2026-01-30 06:02:17.370  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2026-01-30 06:02:17.620  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2026-01-30 06:02:17.625  INFO 7872 --- [restartedMain] com.api.org.Application                  : Started Application in 5.332 seconds (JVM running for 85698.508)
+2026-01-30 06:02:17.627  INFO 7872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-30 06:02:30.708  INFO 7872 --- [Thread-4939] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 06:02:30.708  INFO 7872 --- [Thread-4939] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2026-01-30 06:02:30.709  INFO 7872 --- [Thread-4939] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Shutdown initiated...
+2026-01-30 06:02:31.706  INFO 7872 --- [Thread-4939] com.zaxxer.hikari.HikariDataSource       : HikariPool-22 - Shutdown completed.
+2026-01-30 06:02:31.865  INFO 7872 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-6J2N3ET with PID 7872 (D:\Sasnetics\Projects\BEL\PMS\trackingSystem\target\classes started by lenovo in D:\Sasnetics\Projects\BEL\PMS\trackingSystem)
+2026-01-30 06:02:31.865  INFO 7872 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
+2026-01-30 06:02:32.268  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2026-01-30 06:02:32.316  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47ms. Found 11 JPA repository interfaces.
+2026-01-30 06:02:32.396  INFO 7872 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2026-01-30 06:02:32.409  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2026-01-30 06:02:32.409  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:02:32.410  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:02:32.410  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:02:32.410  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2026-01-30 06:02:32.410  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:02:32.410  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:02:32.410  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:02:32.410  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:02:32.422  INFO 7872 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2026-01-30 06:02:32.439  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@39a801' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 06:02:32.443  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 06:02:32.461  INFO 7872 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2026-01-30 06:02:32.462  INFO 7872 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2026-01-30 06:02:32.720  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
+2026-01-30 06:02:32.721  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-30 06:02:32.721  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2026-01-30 06:02:32.757  INFO 7872 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
+2026-01-30 06:02:32.757  INFO 7872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 887 ms
+2026-01-30 06:02:32.917  WARN 7872 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 06:02:33.027  INFO 7872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2026-01-30 06:02:33.041  INFO 7872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 06:02:33.051  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Starting...
+2026-01-30 06:02:35.727  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Start completed.
+2026-01-30 06:02:35.727  INFO 7872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2026-01-30 06:02:35.868  INFO 7872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 06:02:36.466  INFO 7872 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1164ede, org.springframework.security.web.context.SecurityContextPersistenceFilter@122552d, org.springframework.security.web.header.HeaderWriterFilter@1f091d7, org.springframework.web.filter.CorsFilter@1aef214, org.springframework.security.web.authentication.logout.LogoutFilter@1237cb8, com.api.org.security.JwtAuthenticationFilter@1f81916, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@fbfc6e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@164bf0f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@176dfbc, org.springframework.security.web.session.SessionManagementFilter@cd6bf2, org.springframework.security.web.access.ExceptionTranslationFilter@154100f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@73ef7d]
+2026-01-30 06:02:36.667  INFO 7872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-30 06:02:36.688  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
+2026-01-30 06:02:36.689  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2026-01-30 06:02:37.161  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2026-01-30 06:02:37.166  INFO 7872 --- [restartedMain] com.api.org.Application                  : Started Application in 5.331 seconds (JVM running for 85718.05)
+2026-01-30 06:02:37.169  INFO 7872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-30 06:03:07.023  INFO 7872 --- [Thread-5174] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 06:03:07.024  INFO 7872 --- [Thread-5174] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2026-01-30 06:03:07.025  INFO 7872 --- [Thread-5174] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Shutdown initiated...
+2026-01-30 06:03:07.033  INFO 7872 --- [Thread-5174] com.zaxxer.hikari.HikariDataSource       : HikariPool-23 - Shutdown completed.
+2026-01-30 06:03:07.260  INFO 7872 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-6J2N3ET with PID 7872 (D:\Sasnetics\Projects\BEL\PMS\trackingSystem\target\classes started by lenovo in D:\Sasnetics\Projects\BEL\PMS\trackingSystem)
+2026-01-30 06:03:07.261  INFO 7872 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
+2026-01-30 06:03:07.718  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2026-01-30 06:03:07.786  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 67ms. Found 11 JPA repository interfaces.
+2026-01-30 06:03:07.867  INFO 7872 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2026-01-30 06:03:07.877  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2026-01-30 06:03:07.877  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:03:07.877  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:03:07.877  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:03:07.877  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2026-01-30 06:03:07.877  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:03:07.877  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:03:07.877  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:03:07.877  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:03:07.885  INFO 7872 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2026-01-30 06:03:07.896  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@a10d66' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 06:03:07.900  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 06:03:07.911  INFO 7872 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2026-01-30 06:03:07.912  INFO 7872 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2026-01-30 06:03:08.104  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
+2026-01-30 06:03:08.105  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-30 06:03:08.105  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2026-01-30 06:03:08.127  INFO 7872 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
+2026-01-30 06:03:08.127  INFO 7872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 860 ms
+2026-01-30 06:03:08.244  WARN 7872 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 06:03:08.308  INFO 7872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2026-01-30 06:03:08.329  INFO 7872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 06:03:08.335  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-24 - Starting...
+2026-01-30 06:03:11.028  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-24 - Start completed.
+2026-01-30 06:03:11.029  INFO 7872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2026-01-30 06:03:11.158  INFO 7872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 06:03:11.737  INFO 7872 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1765cba, org.springframework.security.web.context.SecurityContextPersistenceFilter@5fdd0b, org.springframework.security.web.header.HeaderWriterFilter@b1af2c, org.springframework.web.filter.CorsFilter@4ea6c3, org.springframework.security.web.authentication.logout.LogoutFilter@74e7f2, com.api.org.security.JwtAuthenticationFilter@49416f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@18172de, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@127b0d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@903c46, org.springframework.security.web.session.SessionManagementFilter@7c4bf8, org.springframework.security.web.access.ExceptionTranslationFilter@1081365, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3eb137]
+2026-01-30 06:03:12.038  INFO 7872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-30 06:03:12.059  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
+2026-01-30 06:03:12.060  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2026-01-30 06:03:12.329  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2026-01-30 06:03:12.336  INFO 7872 --- [restartedMain] com.api.org.Application                  : Started Application in 5.131 seconds (JVM running for 85753.218)
+2026-01-30 06:03:12.338  INFO 7872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-30 06:03:23.217  INFO 7872 --- [Thread-5409] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 06:03:23.218  INFO 7872 --- [Thread-5409] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2026-01-30 06:03:23.218  INFO 7872 --- [Thread-5409] com.zaxxer.hikari.HikariDataSource       : HikariPool-24 - Shutdown initiated...
+2026-01-30 06:03:24.373  INFO 7872 --- [Thread-5409] com.zaxxer.hikari.HikariDataSource       : HikariPool-24 - Shutdown completed.
+2026-01-30 06:03:24.520  INFO 7872 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-6J2N3ET with PID 7872 (D:\Sasnetics\Projects\BEL\PMS\trackingSystem\target\classes started by lenovo in D:\Sasnetics\Projects\BEL\PMS\trackingSystem)
+2026-01-30 06:03:24.520  INFO 7872 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
+2026-01-30 06:03:25.030  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2026-01-30 06:03:25.086  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56ms. Found 11 JPA repository interfaces.
+2026-01-30 06:03:25.153  INFO 7872 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2026-01-30 06:03:25.162  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2026-01-30 06:03:25.163  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:03:25.163  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:03:25.163  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:03:25.163  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2026-01-30 06:03:25.163  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:03:25.163  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:03:25.163  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:03:25.163  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:03:25.171  INFO 7872 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2026-01-30 06:03:25.183  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@100d63b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 06:03:25.187  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 06:03:25.197  INFO 7872 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2026-01-30 06:03:25.197  INFO 7872 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2026-01-30 06:03:25.388  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
+2026-01-30 06:03:25.389  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-30 06:03:25.389  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2026-01-30 06:03:25.407  INFO 7872 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
+2026-01-30 06:03:25.407  INFO 7872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 884 ms
+2026-01-30 06:03:25.501  WARN 7872 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 06:03:25.554  INFO 7872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2026-01-30 06:03:25.567  INFO 7872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 06:03:25.576  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Starting...
+2026-01-30 06:03:28.398  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Start completed.
+2026-01-30 06:03:28.399  INFO 7872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2026-01-30 06:03:28.559  INFO 7872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 06:03:29.109  INFO 7872 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1854630, org.springframework.security.web.context.SecurityContextPersistenceFilter@33b031, org.springframework.security.web.header.HeaderWriterFilter@b5ad04, org.springframework.web.filter.CorsFilter@859cc, org.springframework.security.web.authentication.logout.LogoutFilter@ee55fe, com.api.org.security.JwtAuthenticationFilter@15cd53e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@15b9029, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c3d18b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2015b3, org.springframework.security.web.session.SessionManagementFilter@7e3933, org.springframework.security.web.access.ExceptionTranslationFilter@bca5e3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@13bb3bd]
+2026-01-30 06:03:29.280  INFO 7872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-30 06:03:29.298  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
+2026-01-30 06:03:29.299  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2026-01-30 06:03:29.640  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2026-01-30 06:03:29.644  INFO 7872 --- [restartedMain] com.api.org.Application                  : Started Application in 5.158 seconds (JVM running for 85770.527)
+2026-01-30 06:03:29.646  INFO 7872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-30 06:06:29.521  INFO 7872 --- [Thread-5644] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 06:06:29.521  INFO 7872 --- [Thread-5644] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2026-01-30 06:06:29.522  INFO 7872 --- [Thread-5644] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Shutdown initiated...
+2026-01-30 06:06:29.526  INFO 7872 --- [Thread-5644] com.zaxxer.hikari.HikariDataSource       : HikariPool-25 - Shutdown completed.
+2026-01-30 06:06:29.651  INFO 7872 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-6J2N3ET with PID 7872 (D:\Sasnetics\Projects\BEL\PMS\trackingSystem\target\classes started by lenovo in D:\Sasnetics\Projects\BEL\PMS\trackingSystem)
+2026-01-30 06:06:29.652  INFO 7872 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
+2026-01-30 06:06:30.020  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2026-01-30 06:06:30.058  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38ms. Found 11 JPA repository interfaces.
+2026-01-30 06:06:30.122  INFO 7872 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2026-01-30 06:06:30.132  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2026-01-30 06:06:30.132  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:06:30.132  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:06:30.132  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:06:30.132  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2026-01-30 06:06:30.132  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:06:30.132  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:06:30.132  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:06:30.132  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:06:30.138  INFO 7872 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2026-01-30 06:06:30.149  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1e3c4e0' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 06:06:30.153  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 06:06:30.162  INFO 7872 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2026-01-30 06:06:30.162  INFO 7872 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2026-01-30 06:06:30.327  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
+2026-01-30 06:06:30.328  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-30 06:06:30.328  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2026-01-30 06:06:30.346  INFO 7872 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
+2026-01-30 06:06:30.346  INFO 7872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 691 ms
+2026-01-30 06:06:30.426  WARN 7872 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 06:06:30.465  INFO 7872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2026-01-30 06:06:30.477  INFO 7872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 06:06:30.491  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-26 - Starting...
+2026-01-30 06:06:33.299  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-26 - Start completed.
+2026-01-30 06:06:33.300  INFO 7872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2026-01-30 06:06:33.426  INFO 7872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 06:06:33.920  INFO 7872 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e9666f, org.springframework.security.web.context.SecurityContextPersistenceFilter@15e71a1, org.springframework.security.web.header.HeaderWriterFilter@151a07c, org.springframework.web.filter.CorsFilter@1e8eda2, org.springframework.security.web.authentication.logout.LogoutFilter@85aaec, com.api.org.security.JwtAuthenticationFilter@734ec0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@cc3ca5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@603bc0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1b1a43d, org.springframework.security.web.session.SessionManagementFilter@15c4b9, org.springframework.security.web.access.ExceptionTranslationFilter@1edc34c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1b9bd76]
+2026-01-30 06:06:34.047  INFO 7872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-30 06:06:34.201  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
+2026-01-30 06:06:34.202  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2026-01-30 06:06:34.400  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2026-01-30 06:06:34.403  INFO 7872 --- [restartedMain] com.api.org.Application                  : Started Application in 4.783 seconds (JVM running for 85955.287)
+2026-01-30 06:06:34.405  INFO 7872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-30 06:06:46.269  INFO 7872 --- [Thread-5879] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 06:06:46.269  INFO 7872 --- [Thread-5879] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2026-01-30 06:06:46.271  INFO 7872 --- [Thread-5879] com.zaxxer.hikari.HikariDataSource       : HikariPool-26 - Shutdown initiated...
+2026-01-30 06:06:46.781  INFO 7872 --- [Thread-5879] com.zaxxer.hikari.HikariDataSource       : HikariPool-26 - Shutdown completed.
+2026-01-30 06:06:46.920  INFO 7872 --- [restartedMain] com.api.org.Application                  : Starting Application on DESKTOP-6J2N3ET with PID 7872 (D:\Sasnetics\Projects\BEL\PMS\trackingSystem\target\classes started by lenovo in D:\Sasnetics\Projects\BEL\PMS\trackingSystem)
+2026-01-30 06:06:46.920  INFO 7872 --- [restartedMain] com.api.org.Application                  : No active profile set, falling back to default profiles: default
+2026-01-30 06:06:47.245  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2026-01-30 06:06:47.295  INFO 7872 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48ms. Found 11 JPA repository interfaces.
+2026-01-30 06:06:47.363  INFO 7872 --- [restartedMain] ptablePropertiesBeanFactoryPostProcessor : Post-processing PropertySource instances
+2026-01-30 06:06:47.374  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource configurationProperties [org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource] to AOP Proxy
+2026-01-30 06:06:47.374  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletConfigInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:06:47.374  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource servletContextInitParams [org.springframework.core.env.PropertySource$StubPropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:06:47.374  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:06:47.374  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+2026-01-30 06:06:47.374  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+2026-01-30 06:06:47.374  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource applicationConfig: [classpath:/application.properties] [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:06:47.374  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource devtools [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:06:47.374  INFO 7872 --- [restartedMain] c.u.j.EncryptablePropertySourceConverter : Converting PropertySource class path resource [springdoc.swagger-ui.config] [org.springframework.core.io.support.ResourcePropertySource] to EncryptableMapPropertySourceWrapper
+2026-01-30 06:06:47.380  INFO 7872 --- [restartedMain] c.u.j.filter.DefaultLazyPropertyFilter   : Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+2026-01-30 06:06:47.391  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1f139f7' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 06:06:47.394  INFO 7872 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2026-01-30 06:06:47.405  INFO 7872 --- [restartedMain] c.u.j.r.DefaultLazyPropertyResolver      : Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+2026-01-30 06:06:47.405  INFO 7872 --- [restartedMain] c.u.j.d.DefaultLazyPropertyDetector      : Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+2026-01-30 06:06:47.624  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 1010 (http)
+2026-01-30 06:06:47.625  INFO 7872 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-30 06:06:47.625  INFO 7872 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.35]
+2026-01-30 06:06:47.642  INFO 7872 --- [restartedMain] o.a.c.c.C.[.[.[/trackingSystem]          : Initializing Spring embedded WebApplicationContext
+2026-01-30 06:06:47.642  INFO 7872 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 720 ms
+2026-01-30 06:06:47.717  WARN 7872 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-30 06:06:47.756  INFO 7872 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2026-01-30 06:06:47.769  INFO 7872 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-30 06:06:47.775  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-27 - Starting...
+2026-01-30 06:06:50.549  INFO 7872 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-27 - Start completed.
+2026-01-30 06:06:50.550  INFO 7872 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2026-01-30 06:06:50.681  INFO 7872 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-30 06:06:51.200  INFO 7872 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@b4de49, org.springframework.security.web.context.SecurityContextPersistenceFilter@5739ea, org.springframework.security.web.header.HeaderWriterFilter@b2de8e, org.springframework.web.filter.CorsFilter@1f8ac5d, org.springframework.security.web.authentication.logout.LogoutFilter@9c50b8, com.api.org.security.JwtAuthenticationFilter@2c9036, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2e32af, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@82dc0a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e56746, org.springframework.security.web.session.SessionManagementFilter@b47b4f, org.springframework.security.web.access.ExceptionTranslationFilter@ab8681, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@961c5a]
+2026-01-30 06:06:51.314  INFO 7872 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-01-30 06:06:51.327  INFO 7872 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 1010 (http) with context path '/trackingSystem'
+2026-01-30 06:06:51.328  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2026-01-30 06:06:51.699  INFO 7872 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2026-01-30 06:06:51.703  INFO 7872 --- [restartedMain] com.api.org.Application                  : Started Application in 4.81 seconds (JVM running for 85972.586)
+2026-01-30 06:06:51.704  INFO 7872 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2026-01-30 06:20:03.399  WARN 7872 --- [HikariPool-27 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-27 - Thread starvation or clock leap detected (housekeeper delta=10m42s703ms470µs600ns).

@@ -18,8 +18,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
-
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(
@@ -30,7 +28,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    CustomUserDetailsService customUserDetailsService;
+    private CustomUserDetailsService customUserDetailsService;
 
     @Autowired
     private JwtAuthenticationEntryPoint unauthorizedHandler;
@@ -41,16 +39,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    public void configure(AuthenticationManagerBuilder auth) throws Exception {
-    	auth.userDetailsService(customUserDetailsService).passwordEncoder(passwordEncoder());
-    }  
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(customUserDetailsService)
+            .passwordEncoder(passwordEncoder());
+    }
 
     @Bean(BeanIds.AUTHENTICATION_MANAGER)
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
- 
 
     @Bean
     public PasswordEncoder passwordEncoder() {
@@ -59,30 +57,43 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-                http.cors().and()
-                .csrf().disable()
-                .exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
-                .and()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
-                .authorizeRequests().antMatchers("/",
+
+        http
+            .cors().and()
+            .csrf().disable()
+
+            .exceptionHandling()
+                .authenticationEntryPoint(unauthorizedHandler)
+            .and()
+
+            .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            .and()
+
+            .authorizeRequests()
+                // Public endpoints
+                .antMatchers(
+                        "/",
                         "/favicon.ico",
-                        "/**/*.png","/**/*.gif","/**/*.svg","/**/*.jpg","/**/*.html","/**/*.css", "/**/*.js",
+
+                        // Auth APIs
                         "/api/auth/**",
-                       "/swagger-ui.html","/v2/**","/v3/**","/webjars/**","/test/**"
-                    	,"/swagger-ui/**", "/techgeeknext-openapi/**"
-                    	, "/swagger-resources/**"
-                    	)
-                .permitAll().anyRequest().authenticated()
-                .and()
-                .httpBasic();
 
-        // Add our custom JWT security filter
-        http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
-     
+                        // Swagger / OpenAPI
+                        "/swagger-ui/**",
+                        "/swagger-ui.html",
+                        "/v3/api-docs/**",
+
+                        // Test / health (if any)
+                        "/test/**"
+                ).permitAll()
+
+                .anyRequest().authenticated();
+
+        // JWT filter
+        http.addFilterBefore(
+                jwtAuthenticationFilter(),
+                UsernamePasswordAuthenticationFilter.class
+        );
     }
-    
-
-  
-
 }
