@@ -13,10 +13,12 @@ import com.api.org.model.audit.DateAudit;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 //@JsonInclude(Include.NON_NULL)
+@NoArgsConstructor
 @Table(name = "projects")
 public class Projects extends DateAudit {
 	
@@ -30,7 +32,6 @@ public class Projects extends DateAudit {
 	
 	private Long createdBy;
 	
-	public Projects() {}
 	
 	public Projects(String name,Long createdBy) {
 		this.name=name;

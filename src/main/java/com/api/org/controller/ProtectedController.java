@@ -25,8 +25,6 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 
 
-
-@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(AppConstants.CONTROLLER_MAIN_PROTECTED)
 public class ProtectedController {

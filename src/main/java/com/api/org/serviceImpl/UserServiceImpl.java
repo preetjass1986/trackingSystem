@@ -108,22 +108,10 @@ public class UserServiceImpl implements UserService {
 	public Response login(LoginRequest loginRequest) 
 	{				
 		if (loginRequest.getUsername() == null || loginRequest.getPassword() == null || loginRequest.getUsername().trim().length()<3
-				|| loginRequest.getPassword().trim().isEmpty()) {
-		    throw new BadRequestException(AppConstants.REQUIRED_PARAMETER_MISSING);
-		}
-			JwtAuthenticationResponse jwtAuthenticationResponse =
-					authenticateUser(loginRequest);
-			return new Response()
-					.setResponseCode(AppConstants.SUCCESS)
-					.setMessage(AppConstants.SUCCESS_STR)
-					.setData(jwtAuthenticationResponse);
-		
-
+				|| loginRequest.getPassword().trim().isEmpty()) { throw new BadRequestException(AppConstants.REQUIRED_PARAMETER_MISSING);}
+			JwtAuthenticationResponse jwtAuthenticationResponse =authenticateUser(loginRequest);
+			return new Response().setResponseCode(AppConstants.SUCCESS).setMessage(AppConstants.SUCCESS_STR).setData(jwtAuthenticationResponse);
 	}
-	
-
-	
-	
 	
 	@Override
 	public Users getUserDetailByToken(String token) {
@@ -141,48 +129,25 @@ public class UserServiceImpl implements UserService {
 	
 
 	public JwtAuthenticationResponse authenticateUser(LoginRequest loginRequest) {
-		Authentication authentication =
-				authenticationManager.authenticate(
-						new UsernamePasswordAuthenticationToken(
-						loginRequest.getUsername(), 
-						loginRequest.getPassword()));
-		//logger.info("["+loginRequest.getUsername()+"] Name:" + authentication.getName() + "|Auth:" + authentication.getAuthorities());
+		Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
+		logger.info("["+loginRequest.getUsername()+"] Name:" + authentication.getName() + "|Auth:" + authentication.getAuthorities());
 
 		SecurityContextHolder.getContext().setAuthentication(authentication);
-		
 		UserPrincipal principal = new UserPrincipal();
 		principal = (UserPrincipal) authentication.getPrincipal();
-		
-		//logger.info("["+loginRequest.getUsername()+"] " + principal.toString());
-		
+		logger.info("["+loginRequest.getUsername()+"] " + principal.toString());
 		
 		String jwt = jwtTokenProvider.generateToken(authentication);
-		
 		Optional<Users> usersOpt=userRepository.findById(principal.getId());
-		
-		 Integer role = usersOpt
-		            .map(Users::getRole)
-		            .orElseThrow(() -> new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING));
-
-		 usersSessionRepository.deleteByUserid(principal.getId()); // Invalidate Old Session
-		 if (usersOpt.isPresent()) {
-			    userRepository.save(usersOpt.get());
-			}
-
-		// ############## Update  auth token in users table ############
-		if(jwt!=null && jwt.length()>1)
+		if(usersOpt.isPresent())
 		{
-			UsersSession usersSession=new UsersSession();
-			usersSession.setUserid(principal.getId());
-			//usersSession.setCreatedOn(new Date());
-			usersSession.setToken(jwt);
-			usersSessionRepository.save(usersSession);	
-		}     
+			Users users=usersOpt.get();
+			users.setToken(jwt);
+			users.setUpdatedOn(new Date());
+			userRepository.save(users);			
+		}
 		
-		return new JwtAuthenticationResponse(jwt, principal.getUsername(),role);
-
-	}
-
-	
+		return new JwtAuthenticationResponse(jwt, principal.getUsername(),usersOpt.get().getRole());
+	}	
 	
 }

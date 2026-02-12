@@ -15,10 +15,12 @@ import com.api.org.model.audit.DateAudit;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 //@JsonInclude(Include.NON_NULL)
+@NoArgsConstructor
 @Table(name = "components")
 public class Components extends DateAudit {
 	
@@ -36,9 +38,6 @@ public class Components extends DateAudit {
 	
 	private Integer status;
 	
-	public Components() {
-		
-	}
 	
 	public Components(Long projectId,Long moduleId,Integer componentsCount,String name) {
 		this.projectId=projectId;

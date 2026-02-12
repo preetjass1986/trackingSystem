@@ -21,20 +21,9 @@ public class Interceptor implements HandlerInterceptor {
 public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 		throws Exception {
 	
-	/* String body="";
-	   if ("POST".equalsIgnoreCase(request.getMethod())) {
-	        body = CharStreams.toString(request.getReader());
-	    }
-	log.info("Request -> Url : "+request.getRequestURI() +"  Method : "+request.getMethod()+"  Data : "+body);*/
 	log.info("Request -> Url : "+request.getRequestURI() +"  Method : "+request.getMethod());
 	return true;
-	/*if(request.getRequestURI().contains("swagger")) return true;
-	else if(request.getHeader("x-auth")!=null && request.getHeader("x-auth").equals("3ac074dc2692d2feb7145ccb180bd1c0c59f5874")) return true;
-	else 
-	{		
-		response.setStatus(404);
-		return false;
-	}*/
+	
 }
 
 @Override

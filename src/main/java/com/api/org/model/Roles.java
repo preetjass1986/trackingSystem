@@ -19,27 +19,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 	
-@Entity
-@Table(name = "roles")  
-@Getter
-@Setter
+@Entity  
+@Data
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-	public class Roles implements Serializable{
+@Table(name = "roles")
+public class Roles implements Serializable{
 	private static final long serialVersionUID = 1L;
 	    @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Integer id;
 
-	    @Column(name = "role_id", unique = true, nullable = false)
 	    private Integer roleId;
 	    
 	    @Column(length = 60, nullable = false)
 	    private String role;
 	    
-	    @Lob
-	    @Column(name = "menu_json")
 	    private String menuJson;
 
 	}

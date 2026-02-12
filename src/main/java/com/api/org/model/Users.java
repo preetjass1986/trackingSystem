@@ -30,16 +30,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 @Entity
-@Table(
-    name = "users",
-    indexes = {
-        @Index(name = "idx_user_role", columnList = "role")
-    }
-)
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = false, onlyExplicitlyIncluded = true)
+@Table(name = "users")
 public class Users extends DateAudit {
 
     @EqualsAndHashCode.Include
@@ -47,13 +41,10 @@ public class Users extends DateAudit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 20)
     private String name;
 
-    @Column(length = 10, unique = true)
     private String ani;
 
-    @Column(name = "user_name", length = 20)
     private String userName;
 
     @JsonIgnore
@@ -62,23 +53,16 @@ public class Users extends DateAudit {
 
     @Column(length = 40)
     private String email;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "role", referencedColumnName = "role_id",
-    insertable = false,
-    updatable = false)
-    private Roles roleEntity;
-    @Column(name = "role")
+    
     private Integer role;
 
 
-    @Column(name = "status", columnDefinition = "int(2) default 1")
     private Integer status=1;
 
-    @Column(name = "sapId", length = 50)
     private String sapId;
 
-    @Lob
-    @Column(name = "thumbIsoTemplate", columnDefinition = "LONGTEXT")
+    
     private String thumbIsoTemplate;
+    
+    private String token;
 }

@@ -12,10 +12,12 @@ import javax.persistence.Table;
 import com.api.org.model.audit.DateAudit;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 //@JsonInclude(Include.NON_NULL)
+@NoArgsConstructor
 @Table(name = "modules")
 public class Modules extends DateAudit {
 	
@@ -29,7 +31,6 @@ public class Modules extends DateAudit {
 	
 	private Long createdBy;
 	
-	public Modules() {}
 	
 	public Modules(String name,Integer componentCount,Long createdBy) {
       this.name=name;
