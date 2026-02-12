@@ -1,1 +1,21 @@
-/target/
+# ==========================
+# Logs
+# ==========================
+logs/
+*.log
+
+# ==========================
+# Spring Boot configuration
+# ==========================
+# Ignore environment-specific configs
+src/main/resources/application-local.properties
+src/main/resources/application-dev.properties
+src/main/resources/application-test.properties
+src/main/resources/application-prod.properties
+
+# (Optional) If application.properties should NOT be committed
+# Uncomment below line ONLY if config differs per machine
+# src/main/resources/application.properties
+# Maven build output
+target/
+
