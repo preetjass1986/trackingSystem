@@ -12,6 +12,8 @@ src/main/resources/application-local.properties
 src/main/resources/application-dev.properties
 src/main/resources/application-test.properties
 src/main/resources/application-prod.properties
+#src/main/resources/application-local.properties
+
 
 # (Optional) If application.properties should NOT be committed
 # Uncomment below line ONLY if config differs per machine
