@@ -10,7 +10,7 @@ import com.api.org.model.FacilitiesFlow;
 
 public interface FacilitiesFlowRepository  extends JpaRepository<FacilitiesFlow, Integer> {
 	
-	@Query("select f from FacilitiesFlow f order by f.name asc")
+	@Query("select f from FacilitiesFlow f order by f.id asc")
 	List<FacilitiesFlow> getData(Pageable pageable);
 	
 	boolean existsByProjectIdAndFacilityId(Long projectId,Integer facilityId);

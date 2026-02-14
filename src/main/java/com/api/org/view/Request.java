@@ -11,6 +11,12 @@ public class Request {
 	 Integer action;
 	 Long projectId;		
 	 Long moduleId;
+	 Integer stageId;
+	 Integer stageFlowId;
+	 Integer facilityId;
+	 Integer facilityFlowId;
+	 Integer sequenceNo;
+	 Integer status;
 	 Integer componentsCount;
 	 
 	 @NotBlank
@@ -21,6 +27,9 @@ public class Request {
 	 @NotBlank
 	 @Size(max = 50)
 	 String name;
+	 
+	 @Size(max = 50)
+	 String code;
 	 
 	 String productCode;
 	 

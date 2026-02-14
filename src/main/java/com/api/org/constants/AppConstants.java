@@ -14,7 +14,7 @@ public interface AppConstants {
 	public static final String 	FAILED_BILLING 	    = "FAILED";
 	public static final String 	SUBSCRIBE 	        = "SUBSCRIBE";
 	public static final String 	UNSUBSCRIBE 	    = "UNSUBSCRIBE";
-	public static final String 	TIMEZONE     	    = "GMT+3:00";
+	public static final String 	TIMEZONE     	    = "GMT+5:30";
 	
 	/******************* WebService EndPoints ***************************/
 	public static final String AUTHORIZATION				= "Authorization";

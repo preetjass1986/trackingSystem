@@ -88,6 +88,7 @@ public class UserServiceImpl implements UserService {
 					user.setEmail(signUpRequest.getEmail());
 					user.setSapId(signUpRequest.getSapId());
 					user.setAni(signUpRequest.getMobile());
+					user.setCreatedOn(new Date());
 					user.setPassword(passwordEncoder.encode(signUpRequest.getPassword()));
 					userRepository.save(user);
 					

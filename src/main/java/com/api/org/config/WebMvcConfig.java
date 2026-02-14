@@ -1,12 +1,18 @@
 package com.api.org.config;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 @Configuration
@@ -29,15 +35,18 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .allowedMethods("HEAD", "OPTIONS", "GET", "POST", "PUT", "PATCH", "DELETE")
                 .maxAge(MAX_AGE_SECS);
     }
-    /*
-	@Override
-	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-	    registry.addResourceHandler("swagger-ui.html")
-	      .addResourceLocations("classpath:/META-INF/resources/");
+    
+    private ObjectMapper mapper;
 
-	    registry.addResourceHandler("/webjars/**")
-	      .addResourceLocations("classpath:/META-INF/resources/webjars/");
-	}
-	
-	*/
+    @Autowired  // spring.jackson.* ObjectMapper's config
+    public WebMvcConfig(ObjectMapper mapper) {
+        this.mapper = mapper;
+    }
+    
+    @Override
+    public void extendMessageConverters (List<HttpMessageConverter<?>> converters) {
+        converters.stream()
+                .filter(x -> x instanceof  MappingJackson2HttpMessageConverter)
+                .forEach(x -> ((MappingJackson2HttpMessageConverter) x).setObjectMapper(mapper));
+    }
 }

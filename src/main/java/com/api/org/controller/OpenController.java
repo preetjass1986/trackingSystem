@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.context.annotation.Profile;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,7 @@ import com.api.org.exception.NotAuthorisedException;
 import com.api.org.exception.RequiredParameterMissing;
 import com.api.org.security.CurrentUser;
 import com.api.org.security.UserPrincipal;
+import com.api.org.service.MantraService;
 import com.api.org.service.UserService;
 import com.api.org.view.JwtAuthenticationResponse;
 import com.api.org.view.LoginRequest;
@@ -41,6 +43,9 @@ public class OpenController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private MantraService mantraService;
 	
 	//@SecurityRequirements(value = {})
 	@PostMapping(AppConstants.CONTROLLER_REGISTER_USER)	
@@ -64,11 +69,11 @@ public class OpenController {
 	    })
 	public Response login(@Valid @RequestBody LoginRequest loginRequest) 
 	{				
-//		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-//		System.out.println(encoder.encode("admin123"));
 
 		return userService.login(loginRequest);
 	}
+	
+
 	
 
 	

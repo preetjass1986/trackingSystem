@@ -14,8 +14,8 @@ public interface StagesFlowRepository extends JpaRepository<StagesFlow, Integer>
 	@Query("select s from StagesFlow s order by s.id desc")
 	List<StagesFlow> getData(Pageable pageable);
 	
-	@Query("select s from StagesFlow s where s.projectId=:projectId and s.facilityId=:facilityId and s.status=:status order by s.name asc")
-	List<Stages> getData(Long projectId,Integer facilityId,Integer status, Pageable pageable);
+	@Query("select s from StagesFlow s where s.projectId=:projectId and s.facilityId=:facilityId and s.status=:status order by s.id asc")
+	List<StagesFlow> getData(Long projectId,Integer facilityId,Integer status, Pageable pageable);
 	
 	boolean existsByProjectIdAndFacilityIdAndStageId(Long projectId,Integer FacilityId,Integer StatgeId);
 
