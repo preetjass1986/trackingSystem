@@ -1,13 +1,16 @@
 package com.api.org.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.api.org.constants.AppConstants;
 import com.api.org.exception.BadRequestException;
@@ -62,6 +65,28 @@ public class AdminController {
 		else { throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);}
 	}
 
+	
+	@PostMapping(value=AppConstants.CONTROLLER_MANAGE_PROJECT_BOM,
+		    consumes = MediaType.MULTIPART_FORM_DATA_VALUE)	
+	@Operation( summary = "Upload Project BOM",
+		    description = "Uploads Project BOM Excel and saves data into BOM tables")
+	@ApiResponses(value = {
+	        @ApiResponse(responseCode = "200", description = "{\"message\": \"Success\"}"), 
+	        @ApiResponse(responseCode = "400", description = "{\"message\": \"Invalid file or parameters\"}")
+	    })
+
+	public Response manageProjectBOM( @CurrentUser UserPrincipal user,@RequestParam("projectId") Long projectId,@RequestParam("file") MultipartFile file) {
+		if(CommonFunctions.hasRole(user.getRole())) //change this condition later to restrict for PMG Admin only
+		{
+		return projectsService.manageProjectBOM(user, projectId, file);
+		}
+		else
+		{
+			 throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);
+		}
+			
+	}
+	
 	@GetMapping(AppConstants.CONTROLLER_PROJECT_BY_ID)
 	@Operation(summary = "Get project record by id ", description = "Return a project detail as per the id")
 	@ApiResponses(value = {

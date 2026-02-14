@@ -22,6 +22,8 @@ public class Request {
 	 @Size(max = 50)
 	 String name;
 	 
+	 String productCode;
+	 
 	 public Request() {}
 	 
 	 

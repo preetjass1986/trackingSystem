@@ -69,7 +69,7 @@ public class UserServiceImpl implements UserService {
 	@Transactional
 	public Response registerUser(RegisterRequest signUpRequest,UserPrincipal userPrincipal) {
 		
-		if (userPrincipal == null || !Integer.valueOf(AppConstants.SUPPER_ADMIN_ROLE)
+		if (userPrincipal == null || !Integer.valueOf(AppConstants.ROLE_SUPPER_ADMIN_ROLE)
 		        .equals(userPrincipal.getRole())) {
 		    throw new NotAuthorisedException(AppConstants.NOT_AUTHORISED_STRING);
 		}

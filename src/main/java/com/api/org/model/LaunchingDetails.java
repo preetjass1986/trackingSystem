@@ -11,73 +11,73 @@ public class LaunchingDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "launching_no", length = 50)
+ 
     private String launchingNo;
 
-    @Column(name = "facility", length = 20)
+
     private String facility;
 
-    @Column(name = "project_name", length = 100)
+ 
     private String projectName;
 
-    @Column(name = "project_id", length = 20)
+
     private String projectId;
 
-    @Column(name = "material_no", length = 20)
+
     private String materialNo;
 
-    @Column(name = "description", length = 200)
+
     private String description;
 
-    @Column(name = "type_of_material", length = 20)
+  
     private String typeOfMaterial;
 
-    @Column(name = "quantity")
+
     private Integer quantity;
 
-    @Column(name = "sr_no_from")
+ 
     private Long srNoFrom;
 
-    @Column(name = "sr_no_to")
+
     private Long srNoTo;
 
-    @Column(name = "issue_level_ga", length = 20)
+
     private String issueLevelGa;
 
-    @Column(name = "issue_level_pa", length = 20)
+
     private String issueLevelPa;
 
-    @Column(name = "completion_date")
+ 
     private LocalDate completionDate;
 
-    @Column(name = "estimated_hours")
+
     private Double estimatedHours;
 
-    @Column(name = "green_channel")
+
     private Boolean greenChannel;
 
-    @Column(name = "direct_saleable")
+
     private Boolean directSaleable;
 
-    @Column(name = "routing", length = 20)
+
     private String routing;
 
-    @Column(name = "direct_iust", length = 20)
+
     private String directIust;
 
-    @Column(name = "edtimated_cogs", length = 20)
+
     private String edtimatedCogs;
 
-    @Column(name = "reserve_1", length = 50)
+  
     private String reserve1;
 
-    @Column(name = "reserve_2", length = 50)
+
     private String reserve2;
 
-    @Column(name = "reserve_3", length = 50)
+
     private String reserve3;
 
-    // ===== Constructors =====
+ 
 
     public LaunchingDetails() {
     }

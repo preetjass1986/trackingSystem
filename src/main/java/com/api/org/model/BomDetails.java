@@ -10,47 +10,46 @@ public class BomDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long projectId;
 
-    @Column(name = "mother_part_no", length = 50)
-    private String motherPartNo;
+      private String motherPartNo;
 
-    @Column(name = "mother_part_desc", length = 150)
+   
     private String motherPartDesc;
 
-    @Column(name = "child_part_no", length = 50)
+
     private String childPartNo;
 
-    @Column(name = "child_part_desc", length = 150)
+   
     private String childPartDesc;
 
-    @Column(name = "quantity")
+ 
     private Integer quantity;
 
-    @Column(name = "unit", length = 20)
+ 
     private String unit;
 
-    @Column(name = "type", length = 50)
+  
     private String type;
 
-    @Column(name = "ga_issue_level", length = 20)
+
     private String gaIssueLevel;
 
-    @Column(name = "pl_issue_level", length = 20)
+
     private String plIssueLevel;
 
-    @Column(name = "reserve_1", length = 20)
+
     private String reserve1;
 
-    @Column(name = "reserve_2", length = 20)
+  
     private String reserve2;
 
-    @Column(name = "created_at")
+ 
     private LocalDateTime createdAt;
 
-    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    // ===== Constructors =====
+  
 
     public BomDetails() {
     }
@@ -63,6 +62,14 @@ public class BomDetails {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Long id) {
+        this.projectId = id;
     }
 
     public String getMotherPartNo() {

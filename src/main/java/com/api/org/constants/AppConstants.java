@@ -184,12 +184,13 @@ public interface AppConstants {
 	public static final int 	NINE  		= 9;
 	
 	
-	public static final int 	SUPPER_ADMIN_ROLE  	= 1;
-	public static final int 	ADMIN_ROLE  	= 2;
-	public static final int 	USER_ROLE  		= 3;
-	public static final int 	VENDER_ROLE  	= 4;
-	public static final int 	TEST_USER_ROLE  = 5;
-	public static final int 	AGENT_ROLE  	= 6;
+	public static final int 	ROLE_SUPPER_ADMIN_ROLE  	= 1;
+	public static final int 	ROLE_ADMIN_ROLE  	= 2;
+	public static final int 	ROLE_PMG_ADMIN		= 3;
+	public static final int 	ROLE_FACILITY_MASTER  = 4;
+	public static final int 	ROLE_STAGE_USER  	= 5;
+	public static final int 	ROLE_TEST_USER_ROLE  = 6;
+	public static final int 	ROLE_AGENT_ROLE  	= 7;
 	
 
 	
@@ -202,6 +203,7 @@ public interface AppConstants {
 	public static final String CONTROLLER_LOGIN="/login";
 	
 	public static final String CONTROLLER_MANAGE_PROJECT="/manageProject";	
+	public static final String CONTROLLER_MANAGE_PROJECT_BOM="/manageProjectBOM";	
 	public static final String CONTROLLER_PROJECT="/project";
 	public static final String CONTROLLER_PROJECT_BY_ID="/project/{id}";	
 	public static final String CONTROLLER_MANAGE_MODULE="/manageModule";	

@@ -27,14 +27,12 @@ public class Modules extends DateAudit {
 	
 	private String name;
 	
-	private Integer componentCount;
 	
 	private Long createdBy;
 	
 	
-	public Modules(String name,Integer componentCount,Long createdBy) {
+	public Modules(String name,Long createdBy) {
       this.name=name;
-      this.componentCount=componentCount;
       this.createdBy=createdBy;
       this.createdOn=new Date();
 		

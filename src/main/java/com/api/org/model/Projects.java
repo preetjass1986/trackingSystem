@@ -32,11 +32,18 @@ public class Projects extends DateAudit {
 	
 	private Long createdBy;
 	
+	private Date createdOn;
 	
-	public Projects(String name,Long createdBy) {
+	private Date updatedOn;
+	
+	private String productCode;
+	
+	public Projects(String name,Long createdBy,String productCode,Long userId) {
 		this.name=name;
 		this.createdBy=createdBy;
 		this.createdOn=new Date();
+		this.productCode=productCode;
+		
 	}
 
 

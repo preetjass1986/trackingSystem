@@ -58,7 +58,7 @@ Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
 			{
 				if(!modulesRepository.existsByName(request.getName()))
 				{
-					modulesRepository.save(new Modules(request.getName(),request.getComponentsCount(),user.getId()));
+					modulesRepository.save(new Modules(request.getName(),user.getId()));
 					return new Response().setResponseCode(AppConstants.SUCCESS).setMessage(AppConstants.SUCCESS_STR);
 				}
 				else { throw new BadRequestException(AppConstants.RECORD_ALREDAY_EXISTS_STR);}	
@@ -70,7 +70,6 @@ Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
 				{
 					Modules module=modulesOpt.get();
 					if(request.getName()!=null) module.setName(request.getName());
-					if(request.getComponentsCount()!=null) module.setComponentCount(request.getComponentsCount());
 					module.setUpdatedOn(new Date());
 					modulesRepository.save(module);
 					return new Response().setResponseCode(AppConstants.SUCCESS).setMessage(AppConstants.SUCCESS_STR).setData(module);	

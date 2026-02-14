@@ -558,7 +558,7 @@ public class CommonFunctions {
 	     }	
         
         public static boolean hasRole(Integer role) { 
-        	if(role==AppConstants.ADMIN_ROLE || role==AppConstants.SUPPER_ADMIN_ROLE)
+        	if(role==AppConstants.ROLE_ADMIN_ROLE || role==AppConstants.ROLE_SUPPER_ADMIN_ROLE || role==AppConstants.ROLE_PMG_ADMIN)
         		 return true;
         	else return false;
 	     }		
