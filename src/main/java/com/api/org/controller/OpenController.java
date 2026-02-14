@@ -24,6 +24,7 @@ import com.api.org.security.CurrentUser;
 import com.api.org.security.UserPrincipal;
 import com.api.org.service.MantraService;
 import com.api.org.service.UserService;
+import com.api.org.util.CommonApiResponses;
 import com.api.org.view.JwtAuthenticationResponse;
 import com.api.org.view.LoginRequest;
 import com.api.org.view.RegisterRequest;
@@ -50,11 +51,7 @@ public class OpenController {
 	//@SecurityRequirements(value = {})
 	@PostMapping(AppConstants.CONTROLLER_REGISTER_USER)	
 	@Operation(summary = "Register user", description = "")
-	@ApiResponses(value = {
-	        @ApiResponse(responseCode = "200", description = "{\"message\": \"Success\"}"), 
-	        @ApiResponse(responseCode = "208", description = "{\"message\": \"Record already exist.\"}"),
-	        @ApiResponse(responseCode = "400", description = "{\"message\": \"Required parameter missing.\"}")
-	    })
+	@CommonApiResponses
 	public Response createUser(@Valid @RequestBody RegisterRequest signUpRequest,
 			@Parameter(hidden = true) @CurrentUser UserPrincipal userPrincipal) {
 		return userService.registerUser(signUpRequest,userPrincipal);
@@ -63,13 +60,9 @@ public class OpenController {
 	@SecurityRequirements(value = {})
 	@PostMapping(AppConstants.CONTROLLER_LOGIN)
 	@Operation(summary = "Login request", description = "Return a access token to access other authorized APIs")
-	@ApiResponses(value = {
-	        @ApiResponse(responseCode = "200", description = "{\"message\": \"Success\",\"data\": { \"accessToken\": \"eyJhbGciO**************\",\"tokenType\": \"Bearer\",\"name\": \"S Admin\"}}"), 
-	        @ApiResponse(responseCode = "404", description = "{\"message\": \"Invalid username or password.\"}")
-	    })
+	@CommonApiResponses
 	public Response login(@Valid @RequestBody LoginRequest loginRequest) 
-	{				
-
+	{
 		return userService.login(loginRequest);
 	}
 	
